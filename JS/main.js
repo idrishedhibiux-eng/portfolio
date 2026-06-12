@@ -1,3 +1,7 @@
+/* ════════════════════════════════════════════════════════════
+   IDRIS HEDHIBI — PORTFOLIO  ·  shared interactions (all pages)
+   Every block is defensive: it no-ops if its elements are absent.
+   ════════════════════════════════════════════════════════════ */
 (function () {
   'use strict';
 
