@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Evax — Tunisia's National Vaccination Platform · Idris Hedhibi</title>
+  <meta name="description" content="Case study: How I designed Tunisia's national vaccination platform — 8 million registered users, 13 million COVID doses, expanded to all routine immunizations in 2024.">
+  <script src="https://unpkg.com/@phosphor-icons/web@2.1.1" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <!-- NAV -->
+    <nav id="mainNav">
+    <a href="index.html" class="nav-logo">
+      <img src="IDRIS LOGO.png" alt="Idris Hedhibi" width="80" height="24">
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks" role="list">
+      <li><a href="index.html#work">Work</a></li>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#experience">Experience</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main id="main">
+
+  <!-- HERO -->
+  <section class="cs-hero">
+    <div class="cs-hero-grid"></div>
+    <div class="cs-hero-glow"></div>
+    <div class="cs-hero-inner">
+      <p class="cs-eyebrow">Case Study — Healthcare · E-Government</p>
+      <h1>EVAX —<br><em>Tunisia's National</em><br>Vaccination Platform</h1>
+      <p class="cs-hero-desc">I designed both the citizen portal and the health worker backoffice for Tunisia's national digital vaccination platform — initially launched during COVID-19 to coordinate 13 million vaccine doses, then expanded in 2024 to cover all routine immunizations for the country's entire population.</p>
+      <div class="cs-meta">
+        <div class="cs-meta-item"><span class="cs-meta-label">My Role</span><span class="cs-meta-value">Product Designer</span></div>
+        <div class="cs-meta-sep"></div>
+        <div class="cs-meta-item"><span class="cs-meta-label">Company</span><span class="cs-meta-value">EY Tunisia</span></div>
+        <div class="cs-meta-sep"></div>
+        <div class="cs-meta-item"><span class="cs-meta-label">Year</span><span class="cs-meta-value">2022</span></div>
+        <div class="cs-meta-sep"></div>
+        <div class="cs-meta-item"><span class="cs-meta-label">Partners</span><span class="cs-meta-value">GIZ / BMZ · Ministry of Health</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RECOGNITION -->
+  <div class="cs-recognition reveal">
+    <div class="cs-recognition-icon"><i class="ph-fill ph-seal-check"></i></div>
+    <div>
+      <p class="cs-recognition-label">International Recognition</p>
+      <p class="cs-recognition-title">Presented at Council of Arab Ministers of Health · Supported by German Development Cooperation (GIZ/BMZ)</p>
+      <p class="cs-recognition-sub">Launched by Tunisia's Minister of Health Ali Mrabet (June 2024) · Featured as success story at international digital health forums</p>
+    </div>
+  </div>
+
+  <!-- METRICS -->
+  <div class="cs-metrics">
+    <div class="cs-metric reveal"><span class="cs-metric-num">8M+</span><span class="cs-metric-label">Registered Users</span></div>
+    <div class="cs-metric reveal reveal-d1"><span class="cs-metric-num">13M</span><span class="cs-metric-label">COVID Vaccine Doses Tracked</span></div>
+    <div class="cs-metric reveal reveal-d2"><span class="cs-metric-num">1,240</span><span class="cs-metric-label">Vaccination Centres Connected</span></div>
+    <div class="cs-metric reveal reveal-d3"><span class="cs-metric-num">6,190+</span><span class="cs-metric-label">Health Professionals Onboarded</span></div>
+  </div>
+
+  <div class="cs-content">
+
+    <!-- 01 PROBLEM -->
+    <div class="cs-section reveal">
+      <p class="cs-label">01 — The Problem</p>
+      <h2 class="cs-heading">Paper records, fragmented data,<br><em>and a pandemic</em></h2>
+      <p class="cs-body">Before EVAX, Tunisia's vaccination system was entirely paper-based. Parents carried physical vaccination booklets that could be lost, damaged, or forgotten. Each region and health center maintained separate records with no centralized database — making it impossible for the Ministry of Health to get a national overview of vaccination coverage.</p>
+      <p class="cs-body">When COVID-19 hit, Tunisia needed to coordinate mass vaccination for 12 million people with no existing digital infrastructure. There was no registration system, no reminder mechanism, no way to verify vaccination status, and no real-time data for the Ministry to plan vaccine distribution.</p>
+
+      <div class="cs-grid-2">
+        <div class="cs-card">
+          <p class="cs-card-eyebrow">Before EVAX</p>
+          <p class="cs-card-title">Fragmented paper records</p>
+          <p class="cs-card-text">24 regional health directorates maintaining separate records. No centralized database. Health workers spending hours on manual data entry and report generation.</p>
+        </div>
+        <div class="cs-card">
+          <p class="cs-card-eyebrow">The Catalyst</p>
+          <p class="cs-card-title">COVID-19 exposed every gap</p>
+          <p class="cs-card-text">12 million people needed coordinated vaccination. No existing digital platform. Manual processes would take months. Real-time tracking was impossible without a digital solution.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 02 MY ROLE -->
+    <div class="cs-section reveal">
+      <p class="cs-label">02 — My Specific Contributions</p>
+      <h2 class="cs-heading">What I personally<br><em>designed and delivered</em></h2>
+      <p class="cs-body">Working within the EY UX team, I contributed across the full design cycle — from initial research and benchmarking through wireframes, high-fidelity UI, and design system creation. The project ran across 17 sprint deliverables.</p>
+
+      <div class="cs-grid-2">
+        <div class="cs-card">
+          <p class="cs-card-eyebrow">Research</p>
+          <p class="cs-card-title">Discovery &amp; Analysis</p>
+          <p class="cs-card-text">Competitor analysis of international vaccination platforms including the French system and European digital vaccine passport. Benchmarking of global e-health platforms. User personas (2 types). Customer journey maps. Workshop facilitation with Ministry of Health stakeholders.</p>
+        </div>
+        <div class="cs-card">
+          <p class="cs-card-eyebrow">Design</p>
+          <p class="cs-card-title">UI &amp; Systems</p>
+          <p class="cs-card-text">Wireframes and high-fidelity UI design for both citizen portal and health worker backoffice. Design system creation with component library. 50+ prototyped screens. 17 sprint deliverables. 30+ hours of workshops and usability testing sessions.</p>
+        </div>
+      </div>
+
+      <div class="cs-tags">
+        <span class="cs-tag">Competitor Analysis</span>
+        <span class="cs-tag">Benchmarking</span>
+        <span class="cs-tag">User Personas</span>
+        <span class="cs-tag">Customer Journey Maps</span>
+        <span class="cs-tag">Wireframing</span>
+        <span class="cs-tag">High-Fidelity UI</span>
+        <span class="cs-tag">Design System</span>
+        <span class="cs-tag">Workshop Facilitation</span>
+      </div>
+    </div>
+
+    <!-- 03 PROCESS -->
+    <div class="cs-section reveal">
+      <p class="cs-label">03 — Design Process</p>
+      <h2 class="cs-heading">5 phases from research<br><em>to product delivery</em></h2>
+
+      <div class="cs-steps">
+        <div class="cs-step">
+          <div class="cs-step-num">01</div>
+          <div class="cs-step-icon"><i class="ph ph-magnifying-glass"></i></div>
+          <p class="cs-step-title">Study &amp; Alignment</p>
+          <p class="cs-step-text">Collected data on Tunisian and international vaccination systems. In-depth benchmarking. Strategic vision alignment workshops with Ministry of Health. Mapped the existing vaccination schedule across age groups and life events.</p>
+        </div>
+        <div class="cs-step">
+          <div class="cs-step-num">02</div>
+          <div class="cs-step-icon"><i class="ph ph-users"></i></div>
+          <p class="cs-step-title">User Stories &amp; Journeys</p>
+          <p class="cs-step-text">Identified 4 persona types: Tunisian citizens (CIN/non-CIN), foreign citizens, child citizens (pre-school/school age), and vaccination agents (managerial/assistant). Created detailed customer journey maps for each. Built the full product backlog.</p>
+        </div>
+        <div class="cs-step">
+          <div class="cs-step-num">03</div>
+          <div class="cs-step-icon"><i class="ph ph-figma-logo"></i></div>
+          <p class="cs-step-title">Prototyping &amp; Validation</p>
+          <p class="cs-step-text">Designed wireframes and prototypes across 3 use cases: landing/citizen space, citizen registration flow, and vaccination agent workflows. Iterated through 17 sprints with continuous stakeholder validation and feedback cycles.</p>
+        </div>
+        <div class="cs-step">
+          <div class="cs-step-num">04</div>
+          <div class="cs-step-icon"><i class="ph ph-test-tube"></i></div>
+          <p class="cs-step-title">Usability &amp; Ergonomics</p>
+          <p class="cs-step-text">30+ hours of workshops and usability testing sessions. Functional and ergonomic tests across both portals. Demo sessions with Ministry stakeholders. Validated accessibility and user comprehension across diverse literacy levels.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 04 BENCHMARKING & COMPETITOR ANALYSIS -->
+    <div class="cs-section reveal">
+      <p class="cs-label">04 — Benchmarking</p>
+      <h2 class="cs-heading">Studying international<br><em>vaccination platforms</em></h2>
+      <p class="cs-body">I studied international vaccination platforms including the French vaccination system, European digital vaccine passport solutions, and regional digital health initiatives. The benchmarking compared features, user flows, and accessibility standards across platforms — structured as a detailed comparison matrix.</p>
+
+      <div class="cs-img-placeholder">
+        <div class="cs-img-placeholder-inner">
+          <img src="IMG/evax 1.png">
+        </div>
+      </div>
+      <p class="cs-img-caption">Competitor Analysis — comparing features across French, European, and regional e-health platforms</p>
+    </div>
+
+    <!-- 05 PERSONAS & STAKEHOLDERS -->
+    <div class="cs-section reveal">
+      <p class="cs-label">05 — Personas &amp; Stakeholders</p>
+      <h2 class="cs-heading">The people behind<br><em>the platform</em></h2>
+      <p class="cs-body">I identified two groups: the project stakeholders (TCM, Ministry of Health, CIMS, GIZ) and the end-user actors. For the platform, I defined 4 persona categories: Tunisian citizens (CIN holders and non-CIN holders), foreign citizens, child citizens (pre-school and school age), and vaccination agents (managerial and assistant roles). Two detailed primary personas were developed with goals, frustrations, motivations, and technology behaviors.</p>
+
+      <div class="cs-img-placeholder">
+        <div class="cs-img-placeholder-inner">
+           <img src="IMG/evax 2.png">
+        </div>
+      </div>
+      <p class="cs-img-caption">User Personas — citizen and health worker personas with goals, frustrations, and technology behaviors</p>
+
+      <div class="cs-img-placeholder">
+        <div class="cs-img-placeholder-inner">
+          <img src="IMG/evax 3.png">
+        </div>
+      </div>
+      <p class="cs-img-caption">Stakeholder &amp; Actor Map — project stakeholders and 4 end-user categories</p>
+    </div>
+
+    <!-- 06 CUSTOMER JOURNEY MAPS -->
+    <div class="cs-section reveal">
+      <p class="cs-label">06 — Customer Journey Maps</p>
+      <h2 class="cs-heading">Mapping the full<br><em>vaccination journey</em></h2>
+      <p class="cs-body">I created detailed customer journey maps for both primary personas — tracking their experience from awareness of vaccination need through registration, appointment booking, vaccination event, and certificate download. Each CJM mapped touchpoints, emotions, pain points, and opportunities across each stage of the journey.</p>
+
+      <div class="cs-img-placeholder">
+        <div class="cs-img-placeholder-inner">
+          
+          <img src="IMG/evax 4.png">
+        </div>
+      </div>
+      <p class="cs-img-caption">Customer Journey Maps — end-to-end vaccination journey for citizens and health workers</p>
+    </div>
+
+    <!-- 07 EVAX ECOSYSTEM -->
+    <div class="cs-section reveal">
+      <p class="cs-label">07 — The EVAX Ecosystem</p>
+      <h2 class="cs-heading">How all the pieces<br><em>connect</em></h2>
+      <p class="cs-body">EVAX is not a single app — it's a connected ecosystem linking planification (campaign planning), inscription (registration), vaccination (dose administration), réclamations (complaints), stock management, and all 1,240 vaccination centres. The ecosystem diagram shows how data flows between modules and how different user types interact with different surfaces.</p>
+
+      <div class="cs-img-placeholder">
+        <div class="cs-img-placeholder-inner">
+         
+          <img src="IMG/evax 5.png">
+        </div>
+      </div>
+      <p class="cs-img-caption">L'écosystème de EVAX — planification, inscription, vaccination, réclamations, stock, and 1,240 centres</p>
+    </div>
+
+    <!-- 08 BACKLOG & SPRINTS -->
+    <div class="cs-section reveal">
+      <p class="cs-label">08 — Backlog &amp; Sprint Delivery</p>
+      <h2 class="cs-heading">17 sprints, 50+ screens,<br><em>190+ person-days</em></h2>
+      <p class="cs-body">The product backlog contained all user stories for both the citizen journey and the vaccination agent journey, as well as backend flows. Stories were prioritized by impact and delivered across 17 sprints — with continuous stakeholder review at each sprint boundary. The implementation phase totalled 190+ person-days with the development team.</p>
+
+      <div class="cs-grid-3">
+        <div class="cs-card" style="text-align:center;">
+          <p class="cs-card-title" style="font-size:2rem;color:var(--green);margin-bottom:4px;">30+</p>
+          <p class="cs-card-text">Hours of workshops and usability testing sessions</p>
+        </div>
+        <div class="cs-card" style="text-align:center;">
+          <p class="cs-card-title" style="font-size:2rem;color:var(--green);margin-bottom:4px;">50+</p>
+          <p class="cs-card-text">Prototyped screens across both portals</p>
+        </div>
+        <div class="cs-card" style="text-align:center;">
+          <p class="cs-card-title" style="font-size:2rem;color:var(--green);margin-bottom:4px;">190+</p>
+          <p class="cs-card-text">Person-days with the implementation phase</p>
+        </div>
+      </div>
+
+      <div class="cs-img-placeholder">
+        <div class="cs-img-placeholder-inner">
+          
+          <img src="IMG/evax 6.png">
+        </div>
+      </div>
+      <p class="cs-img-caption">Sprint Cycle — 17 sprints from Sprint 1 through Sprint 17 with backlog and deliverables</p>
+    </div>
+
+    <!-- 09 THE SOLUTION -->
+    <div class="cs-section reveal">
+      <p class="cs-label">09 — The Solution</p>
+      <h2 class="cs-heading">Two-portal architecture —<br><em>citizens and health workers</em></h2>
+      <p class="cs-body">EVAX was designed as a two-sided platform: a citizen-facing portal for registration, appointments, and certificate access — and a health worker backoffice for vaccination management, stock tracking, and reporting.</p>
+
+      <div class="cs-grid-2">
+        <div class="cs-card">
+          <p class="cs-card-eyebrow">Portal 1 — Espace Citoyen</p>
+          <p class="cs-card-title">Citizen Portal</p>
+          <p class="cs-card-text">Register using national ID card. View complete family vaccination history. Book appointments at nearest centres. Receive SMS reminders for upcoming doses. Download official digital vaccination certificates. Mobile-responsive design with simple, intuitive interface.</p>
+        </div>
+        <div class="cs-card">
+          <p class="cs-card-eyebrow">Portal 2 — Backoffice</p>
+          <p class="cs-card-title">Health Worker Portal</p>
+          <p class="cs-card-text">Dashboard with key metrics. Citizen search and record management. Stock declaration (Déclarer le stock). Complaint handling (Réclamation). Adverse event reporting (Signaler des MAPI). Vaccination campaign planning and automated reporting.</p>
+        </div>
+      </div>
+
+      <p class="cs-body" style="margin-top:20px;">The platform covers all vaccine types: children from birth to 18 (complete national calendar), pregnant women, seasonal flu, rabies, travel vaccinations, and exceptional vaccinations for outbreaks. The EVAX ecosystem connects planification, inscription, vaccination, réclamations, stock management, and all 1,240 vaccination centres nationwide.</p>
+
+      <div class="cs-img-placeholder">
+        <div class="cs-img-placeholder-inner">
+          <img src="IMG/evax 7.png">
+        </div>
+      </div>
+      <p class="cs-img-caption">Espace Citoyen — the citizen-facing portal in Arabic with vaccination history and certificate access</p>
+
+      <div class="cs-img-placeholder">
+        <div class="cs-img-placeholder-inner">
+         <img src="IMG/evax 8.png">
+        </div>
+      </div>
+      <p class="cs-img-caption">Backoffice — health worker portal with campaign management, stock tracking, and MAPI reporting</p>
+    </div>
+
+    <!-- 05 DESIGN DECISIONS -->
+    <div class="cs-section reveal">
+      <p class="cs-label">10 — Key Design Decisions</p>
+      <h2 class="cs-heading">Choices that shaped<br><em>the product at scale</em></h2>
+
+      <div class="cs-grid-3">
+        <div class="cs-card">
+          <p class="cs-card-eyebrow">Decision 01</p>
+          <p class="cs-card-title">Two-portal split</p>
+          <p class="cs-card-text">Separating citizen and health worker experiences completely — different login, different flows, different mental models. Citizens need simplicity. Health workers need density. One interface couldn't serve both.</p>
+        </div>
+        <div class="cs-card">
+          <p class="cs-card-eyebrow">Decision 02</p>
+          <p class="cs-card-title">Modular design system</p>
+          <p class="cs-card-text">Building reusable components instead of one-off screens. This added time upfront but meant the system could extend to routine vaccinations in 2024 without a redesign — and 2 Ministry departments adopted the library.</p>
+        </div>
+        <div class="cs-card">
+          <p class="cs-card-eyebrow">Decision 03</p>
+          <p class="cs-card-title">SMS-first for low literacy</p>
+          <p class="cs-card-text">Registration available via SMS ("Evax" to 85355), USSD code (*2021#), toll-free phone, and pharmacy walk-ins — not just the web platform. This ensured citizens with limited digital literacy could still register.</p>
+        </div>
+      </div>
+
+      <div class="cs-img-placeholder">
+        <div class="cs-img-placeholder-inner">
+          <img src="IMG/evax 9.png">
+        </div>
+      </div>
+      <p class="cs-img-caption">Modular design system — built for EVAX, adopted across 2 Ministry of Health departments</p>
+    </div>
+
+    <!-- 06 OUTCOME -->
+    <div class="cs-section reveal">
+      <p class="cs-label">11 — Outcome &amp; Impact</p>
+      <h2 class="cs-heading">From crisis tool to<br><em>national health infrastructure</em></h2>
+
+      <p class="cs-body">EVAX was initially launched during COVID-19 as an emergency vaccination coordination tool. By 2024, the platform was officially expanded to cover all routine immunizations — becoming Tunisia's permanent national vaccination record system.</p>
+
+      <div class="cs-impact-table">
+        <table style="width:100%;border-collapse:collapse;">
+          <thead><tr>
+            <th style="border:1px solid var(--border);padding:12px 16px;background:var(--bg-2);color:var(--green);font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;text-align:left;">Metric</th>
+            <th style="border:1px solid var(--border);padding:12px 16px;background:var(--bg-2);color:var(--green);font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;text-align:left;">Result</th>
+          </tr></thead>
+          <tbody>
+            <tr><td style="border:1px solid var(--border);padding:12px 16px;background:var(--bg-card);color:var(--gray-1);font-size:.76rem;">Registered users</td><td style="border:1px solid var(--border);padding:12px 16px;background:var(--bg-card);color:var(--white);font-size:.76rem;font-weight:600;">8 million+ (⅔ of population)</td></tr>
+            <tr><td style="border:1px solid var(--border);padding:12px 16px;background:var(--bg-card);color:var(--gray-1);font-size:.76rem;">COVID-19 doses tracked</td><td style="border:1px solid var(--border);padding:12px 16px;background:var(--bg-card);color:var(--white);font-size:.76rem;font-weight:600;">13 million</td></tr>
+            <tr><td style="border:1px solid var(--border);padding:12px 16px;background:var(--bg-card);color:var(--gray-1);font-size:.76rem;">Vaccination centres</td><td style="border:1px solid var(--border);padding:12px 16px;background:var(--bg-card);color:var(--white);font-size:.76rem;font-weight:600;">1,240 connected nationwide</td></tr>
+            <tr><td style="border:1px solid var(--border);padding:12px 16px;background:var(--bg-card);color:var(--gray-1);font-size:.76rem;">Health professionals</td><td style="border:1px solid var(--border);padding:12px 16px;background:var(--bg-card);color:var(--white);font-size:.76rem;font-weight:600;">6,190+ onboarded</td></tr>
+            <tr><td style="border:1px solid var(--border);padding:12px 16px;background:var(--bg-card);color:var(--gray-1);font-size:.76rem;">Routine child vaccinations (post-2024 expansion)</td><td style="border:1px solid var(--border);padding:12px 16px;background:var(--bg-card);color:var(--white);font-size:.76rem;font-weight:600;">469,785 doses given · 65,184 children registered</td></tr>
+            <tr><td style="border:1px solid var(--border);padding:12px 16px;background:var(--bg-card);color:var(--gray-1);font-size:.76rem;">Regional coverage</td><td style="border:1px solid var(--border);padding:12px 16px;background:var(--bg-card);color:var(--white);font-size:.76rem;font-weight:600;">24 regional health directorates · 221 constituencies</td></tr>
+            <tr><td style="border:1px solid var(--border);padding:12px 16px;background:var(--bg-card);color:var(--gray-1);font-size:.76rem;">Prototyped screens</td><td style="border:1px solid var(--border);padding:12px 16px;background:var(--bg-card);color:var(--white);font-size:.76rem;font-weight:600;">50+ across both portals</td></tr>
+            <tr><td style="border:1px solid var(--border);padding:12px 16px;background:var(--bg-card);color:var(--gray-1);font-size:.76rem;">Sprint deliverables</td><td style="border:1px solid var(--border);padding:12px 16px;background:var(--bg-card);color:var(--white);font-size:.76rem;font-weight:600;">17 sprints · 190+ person-days implementation</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="cs-quote">
+        <blockquote>"EVAX is a digital tool that enables all Tunisians to make appointments with doctors and get vaccinated by simply registering using their ID card. Since the launch, more than eight million Tunisians have registered."</blockquote>
+        <p class="cs-quote-source">BMZ Digital.Global (German Federal Ministry for Economic Cooperation)</p>
+      </div>
+    </div>
+
+    <!-- 07 REFLECTION -->
+    <div class="cs-section reveal">
+      <p class="cs-label">12 — Reflection</p>
+      <h2 class="cs-heading">What I learned about<br><em>designing under crisis</em></h2>
+
+      <div class="cs-reflection">
+        <p class="cs-body" style="margin-bottom:18px;">EVAX taught me that <strong>constraints force clarity</strong>. When you're designing under pandemic pressure with compressed timelines, you're forced to ruthlessly prioritize — which flows matter most, which edge cases to defer, which components to make modular so they survive beyond the immediate crisis.</p>
+        <p class="cs-body" style="margin-bottom:18px;">The decision to build a modular design system instead of one-off screens was the single most important choice I made. It would have been faster to ship custom screens. But building reusable components meant the Ministry could extend EVAX to routine vaccinations in 2024 without us — and that's what sustainable design looks like.</p>
+        <p class="cs-body">The multi-channel registration approach — web, SMS, USSD, toll-free, pharmacies — was a lesson in equity. A platform that only works for digitally literate users in a country where many citizens have limited internet access isn't a national platform. It's a tool for the privileged. Making EVAX accessible through every channel ensured it could actually reach 8 million people.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- BOTTOM NAV -->
+  </main>
+  <nav class="cs-bottom-nav" aria-label="Case study navigation">
+    <a href="index.html#work" class="cs-bottom-nav-item">
+      <span class="cs-bottom-nav-label">← Back</span>
+      <span class="cs-bottom-nav-title">All Projects</span>
+      <span class="cs-bottom-nav-hint">View Portfolio</span>
+    </a>
+    <a href="lmis.html" class="cs-bottom-nav-item" style="text-align:right;">
+      <span class="cs-bottom-nav-label">Next Case Study →</span>
+      <span class="cs-bottom-nav-title">LMIS — AI Labour Market Intelligence</span>
+      <span class="cs-bottom-nav-hint">UN ESCWA Partnership · Qatar</span>
+    </a>
+  </nav>
+
+  <footer class="cs-footer">
+    <div class="cs-footer-logo"><img src="IDRIS LOGO.png" alt="Idris Hedhibi"></div>
+    <p class="cs-footer-copy">© 2026 — Idris Hedhibi - Senior Product Designer - Doha, Qatar</p>
+    <a href="index.html#contact" class="cs-footer-link">Get in touch →</a>
+  </footer>
+  <script src="js/main.js" defer></script>
+</body>
+</html>

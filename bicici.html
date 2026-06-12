@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BICICI Smart Data Workspace — AI Product Recommendation · Idris Hedhibi</title>
+  <meta name="description" content="Case study: How I designed an AI-powered client product recommendation platform for BICICI BNP Paribas Bank — merging 3 databases into one intelligent view.">
+  <script src="https://unpkg.com/@phosphor-icons/web@2.1.1" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+    <nav id="mainNav">
+    <a href="index.html" class="nav-logo">
+      <img src="IDRIS LOGO.png" alt="Idris Hedhibi" width="80" height="24">
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks" role="list">
+      <li><a href="index.html#work">Work</a></li>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#experience">Experience</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main id="main">
+
+  <section class="cs-hero">
+    <div class="cs-hero-grid"></div>
+    <div class="cs-hero-glow"></div>
+    <div class="cs-hero-inner">
+      <p class="cs-eyebrow">Case Study — FinTech · AI · Enterprise</p>
+      <h1>BICICI <em>Smart Data</em><br>Workspace</h1>
+      <p class="cs-hero-desc">I designed an AI-powered platform for BICICI BNP Paribas Bank that merges 3 separate databases into a single unified view — with intelligent product recommendations ranked by score — enabling commercial agents to recommend the right product to the right client.</p>
+      <div class="cs-meta">
+        <div class="cs-meta-item"><span class="cs-meta-label">My Role</span><span class="cs-meta-value">Product Designer</span></div>
+        <div class="cs-meta-sep"></div>
+        <div class="cs-meta-item"><span class="cs-meta-label">Company</span><span class="cs-meta-value">EY</span></div>
+        <div class="cs-meta-sep"></div>
+        <div class="cs-meta-item"><span class="cs-meta-label">Client</span><span class="cs-meta-value">BICICI · BNP Paribas Group</span></div>
+        <div class="cs-meta-sep"></div>
+        <div class="cs-meta-item"><span class="cs-meta-label">Duration</span><span class="cs-meta-value">1 month</span></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="cs-metrics">
+    <div class="cs-metric reveal"><span class="cs-metric-num">3→1</span><span class="cs-metric-label">Databases Merged to One View</span></div>
+    <div class="cs-metric reveal reveal-d1"><span class="cs-metric-num">AI</span><span class="cs-metric-label">Powered Product Scoring</span></div>
+    <div class="cs-metric reveal reveal-d2"><span class="cs-metric-num">Days→</span><span class="cs-metric-label">Minutes Processing Time</span></div>
+    <div class="cs-metric reveal reveal-d3"><span class="cs-metric-num">1 mo</span><span class="cs-metric-label">Design Sprint Duration</span></div>
+  </div>
+
+  <div class="cs-content">
+
+    <!-- 01 PROBLEM -->
+    <div class="cs-section reveal">
+      <p class="cs-label">01 — The Business Problem</p>
+      <h2 class="cs-heading">Three databases,<br><em>zero unified view</em></h2>
+      <p class="cs-body">BICICI Bank faced a critical operational challenge: client data was scattered across three independent databases — Clients, Operations, and Deposits — with no unified view. Commercial agents wasted hours manually matching information across systems, leading to low product adoption, missed cross-selling opportunities, and a poor understanding of each client's full financial profile.</p>
+
+      <div class="cs-grid-2">
+        <div class="cs-card">
+          <p class="cs-card-eyebrow">3 Separate Data Sources</p>
+          <p class="cs-card-title">No unified client profile</p>
+          <p class="cs-card-text">Clients database, Operations database, and Deposits database — each maintained independently. Agents had to manually cross-reference all three to understand a single client.</p>
+        </div>
+        <div class="cs-card">
+          <p class="cs-card-eyebrow">The Consequences</p>
+          <p class="cs-card-title">Lost revenue &amp; wasted time</p>
+          <p class="cs-card-text">No intelligent product recommendation system. Low equipment rate (clients owned too few bank products). Commercial agents wasted hours on manual data matching instead of selling.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 02 BUSINESS NEED -->
+    <div class="cs-section reveal">
+      <p class="cs-label">02 — The Business Need</p>
+      <h2 class="cs-heading">Increase equipment rate by<br><em>recommending the right product</em></h2>
+      <p class="cs-body">The objective was clear: increase the client equipment rate (taux d'équipement) by recommending the right banking product to the right client using AI. The bank needed a single platform that automatically merges the 3 databases and generates product recommendations ranked by score — turning fragmented data into actionable intelligence for every commercial agent.</p>
+    </div>
+
+    <!-- 03 MY ROLE -->
+    <div class="cs-section reveal">
+      <p class="cs-label">03 — My Role</p>
+      <h2 class="cs-heading">Requirements to<br><em>high-fidelity in 1 month</em></h2>
+
+      <div class="cs-grid-3">
+        <div class="cs-card">
+          <p class="cs-card-eyebrow">Phase 1</p>
+          <p class="cs-card-title">Requirements Gathering</p>
+          <p class="cs-card-text">Collected business needs directly from BICICI stakeholders. Understood the 3-database structure, the manual matching process, and what commercial agents needed to see.</p>
+        </div>
+        <div class="cs-card">
+          <p class="cs-card-eyebrow">Phase 2</p>
+          <p class="cs-card-title">Wireframing</p>
+          <p class="cs-card-text">Created low-fidelity wireframes for the complete flow — login, 3-step file upload, AI processing, and results table. Iterated with client feedback at each stage.</p>
+        </div>
+        <div class="cs-card">
+          <p class="cs-card-eyebrow">Phase 3</p>
+          <p class="cs-card-title">High-Fidelity Design</p>
+          <p class="cs-card-text">Designed the final UI — login page, solution presentation, upload interface (all 3 steps), dashboard with merged output table, and distribution workflow to agency heads and sales reps.</p>
+        </div>
+      </div>
+
+      <div class="cs-tags">
+        <span class="cs-tag">Requirements Gathering</span>
+        <span class="cs-tag">Wireframing</span>
+        <span class="cs-tag">High-Fidelity UI</span>
+        <span class="cs-tag">AI Interface Design</span>
+        <span class="cs-tag">Data Tables</span>
+        <span class="cs-tag">File Upload UX</span>
+      </div>
+    </div>
+
+    <!-- 04 SOLUTION ARCHITECTURE -->
+    <div class="cs-section reveal">
+      <p class="cs-label">04 — Solution Architecture</p>
+      <h2 class="cs-heading">Upload, process,<br><em>recommend, distribute</em></h2>
+      <p class="cs-body">The platform follows a linear flow: bank employees log in, upload 3 database files sequentially (Clients → Operations → Deposits), the AI processing engine merges all files into one unified table, classifies clients by segment, scores products per client, and recommends the best product. The output can be downloaded as Excel/CSV or sent directly to agency heads and sales representatives.</p>
+
+      <div class="cs-eco">
+        <div class="cs-eco-node">
+          <p class="cs-eco-node-label">Step 1–3</p>
+          <p class="cs-eco-node-title">Upload 3 Databases</p>
+          <p class="cs-eco-node-desc">Clients → Operations → Deposits</p>
+        </div>
+        <div class="cs-eco-connector"></div>
+        <div class="cs-eco-node">
+          <p class="cs-eco-node-label">AI Engine</p>
+          <p class="cs-eco-node-title">Processing &amp; Scoring</p>
+          <p class="cs-eco-node-desc">Merge → Classify by segment → Score products → Recommend</p>
+        </div>
+        <div class="cs-eco-connector"></div>
+        <div class="cs-eco-node">
+          <p class="cs-eco-node-label">Output</p>
+          <p class="cs-eco-node-title">Unified Table</p>
+          <p class="cs-eco-node-desc">Client + Segment + Products ranked by score</p>
+        </div>
+        <div class="cs-eco-connector"></div>
+        <div class="cs-eco-row">
+          <div class="cs-eco-node">
+            <p class="cs-eco-node-label">Distribution</p>
+            <p class="cs-eco-node-title">Agency Head</p>
+          </div>
+          <div class="cs-eco-node">
+            <p class="cs-eco-node-label">Distribution</p>
+            <p class="cs-eco-node-title">Sales Representative</p>
+          </div>
+          <div class="cs-eco-node">
+            <p class="cs-eco-node-label">Export</p>
+            <p class="cs-eco-node-title">Download Excel/CSV</p>
+          </div>
+        </div>
+      </div>
+
+      <p class="cs-body" style="margin-top:20px;">The final output table contains: Client name, Current sub-segment, Recommended sub-segment, Agency, Entity, Account manager, Current products (ranked by score), Recommended products (ranked by score), Current equipment rate, Target equipment rate, Products sold, Client contact, Contacted status, and Comments.</p>
+
+     
+        <div class="cs-img-placeholder-inner">
+           <img src="IMG/bicici user flow.png">
+        </div>
+      
+      <p class="cs-img-caption">User flow for the system</p>
+    </div>
+
+    <!-- 05 KEY SCREENS -->
+    <div class="cs-section reveal">
+      <p class="cs-label">05 — Key Screens</p>
+      <h2 class="cs-heading">From login to<br><em>AI-powered recommendations</em></h2>
+
+      <div class="cs-img-placeholder">
+        <div class="cs-img-placeholder-inner">
+           <img src="IMG/bicici 1.png">
+        </div>
+      </div>
+      <p class="cs-img-caption">Login — employee authentication for the Smart Data Workspace platform</p>
+
+      <div class="cs-img-placeholder">
+        <div class="cs-img-placeholder-inner">
+           <img src="IMG/bicici 2.png">
+        </div>
+      </div>
+      <p class="cs-img-caption">File Upload — 3-step sequential upload with drag-and-drop, progress indicators, and file validation</p>
+
+      <div class="cs-img-placeholder">
+        <div class="cs-img-placeholder-inner">
+            <img src="IMG/bicici 3.png">
+        </div>
+      </div>
+      <p class="cs-img-caption">Dashboard — unified output table with AI-scored product recommendations, filterable by agency and segment</p>
+    </div>
+
+    <!-- 06 RESULTS -->
+    <div class="cs-section reveal">
+      <p class="cs-label">06 — Results &amp; Impact</p>
+      <h2 class="cs-heading">Before and after —<br><em>measurable improvement</em></h2>
+
+      <table style="width:100%;border-collapse:collapse;margin:24px 0;">
+        <thead><tr>
+          <th style="border:1px solid var(--border);padding:12px 16px;background:var(--bg-2);color:var(--green);font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;text-align:left;">Metric</th>
+          <th style="border:1px solid var(--border);padding:12px 16px;background:var(--bg-2);color:var(--gray-1);font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;text-align:left;">Before</th>
+          <th style="border:1px solid var(--border);padding:12px 16px;background:var(--bg-2);color:var(--white);font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;text-align:left;">After</th>
+        </tr></thead>
+        <tbody>
+          <tr><td style="border:1px solid var(--border);padding:12px 16px;background:var(--bg-card);color:var(--gray-1);font-size:.76rem;">Data processing time</td><td style="border:1px solid var(--border);padding:12px 16px;background:var(--bg-card);color:var(--gray-1);font-size:.76rem;">Several days (manual)</td><td style="border:1px solid var(--border);padding:12px 16px;background:var(--bg-card);color:var(--green);font-size:.76rem;font-weight:600;">Minutes (automated)</td></tr>
+          <tr><td style="border:1px solid var(--border);padding:12px 16px;background:var(--bg-card);color:var(--gray-1);font-size:.76rem;">Data sources</td><td style="border:1px solid var(--border);padding:12px 16px;background:var(--bg-card);color:var(--gray-1);font-size:.76rem;">3 separate files</td><td style="border:1px solid var(--border);padding:12px 16px;background:var(--bg-card);color:var(--green);font-size:.76rem;font-weight:600;">1 unified table</td></tr>
+          <tr><td style="border:1px solid var(--border);padding:12px 16px;background:var(--bg-card);color:var(--gray-1);font-size:.76rem;">Product recommendation</td><td style="border:1px solid var(--border);padding:12px 16px;background:var(--bg-card);color:var(--gray-1);font-size:.76rem;">No system</td><td style="border:1px solid var(--border);padding:12px 16px;background:var(--bg-card);color:var(--green);font-size:.76rem;font-weight:600;">AI-powered scoring</td></tr>
+          <tr><td style="border:1px solid var(--border);padding:12px 16px;background:var(--bg-card);color:var(--gray-1);font-size:.76rem;">Commercial agent productivity</td><td style="border:1px solid var(--border);padding:12px 16px;background:var(--bg-card);color:var(--gray-1);font-size:.76rem;">Low</td><td style="border:1px solid var(--border);padding:12px 16px;background:var(--bg-card);color:var(--green);font-size:.76rem;font-weight:600;">High (single view of client)</td></tr>
+          <tr><td style="border:1px solid var(--border);padding:12px 16px;background:var(--bg-card);color:var(--gray-1);font-size:.76rem;">Equipment rate</td><td style="border:1px solid var(--border);padding:12px 16px;background:var(--bg-card);color:var(--gray-1);font-size:.76rem;">Baseline</td><td style="border:1px solid var(--border);padding:12px 16px;background:var(--bg-card);color:var(--green);font-size:.76rem;font-weight:600;">Increased (target now visible per client)</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 07 REFLECTION -->
+    <div class="cs-section reveal">
+      <p class="cs-label">07 — Reflection</p>
+      <h2 class="cs-heading">Designing AI for<br><em>non-technical users</em></h2>
+
+      <div class="cs-reflection">
+        <p class="cs-body" style="margin-bottom:18px;">BICICI was a masterclass in <strong>designing complex AI logic with a simple interface</strong>. The underlying system is sophisticated — merging 3 databases, classifying clients into segments, scoring every product per client — but the user interface needed to feel like uploading 3 files and getting a table. If a commercial agent couldn't do it in under 5 minutes without training, the design had failed.</p>
+        <p class="cs-body" style="margin-bottom:18px;">The 3-step upload flow was a deliberate design decision. I could have designed a single upload page for all 3 files, but testing showed that sequential steps with clear progress indicators reduced errors and increased confidence. Users knew exactly where they were, which file they needed next, and what would happen at the end.</p>
+        <p class="cs-body">The 1-month timeline forced extreme focus. No feature creep, no nice-to-haves, no optional modules. Every screen had to earn its existence. That constraint produced a cleaner product than a longer timeline would have — because there was no room for complexity that didn't directly serve the business need.</p>
+      </div>
+    </div>
+
+  </div>
+  </main>
+
+  <nav class="cs-bottom-nav" aria-label="Case study navigation">
+    <a href="mol-design-system.html" class="cs-bottom-nav-item">
+      <span class="cs-bottom-nav-label">← Previous</span>
+      <span class="cs-bottom-nav-title">MoL Design System</span>
+      <span class="cs-bottom-nav-hint">50+ components · Qatar</span>
+    </a>
+    <a href="index.html#work" class="cs-bottom-nav-item" style="text-align:right;">
+      <span class="cs-bottom-nav-label">All Work →</span>
+      <span class="cs-bottom-nav-title">Back to Portfolio</span>
+      <span class="cs-bottom-nav-hint">View all projects</span>
+    </a>
+  </nav>
+
+  <footer class="cs-footer">
+    <div class="cs-footer-logo"><img src="IDRIS LOGO.png" alt="Idris Hedhibi"></div>
+    <p class="cs-footer-copy">© 2026 — Idris Hedhibi - Senior Product Designer - Doha, Qatar</p>
+    <a href="index.html#contact" class="cs-footer-link">Get in touch →</a>
+  </footer>
+  <script src="js/main.js" defer></script>
+</body>
+</html>

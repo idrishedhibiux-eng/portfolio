@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ministry of Labour Design System · Idris Hedhibi</title>
+  <meta name="description" content="Case study: How I built a scalable bilingual design system for Qatar's Ministry of Labour — 50+ components, 9+ platforms unified, WCAG 2.1 AA compliant.">
+  <script src="https://unpkg.com/@phosphor-icons/web@2.1.1" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+    <nav id="mainNav">
+    <a href="index.html" class="nav-logo">
+      <img src="IDRIS LOGO.png" alt="Idris Hedhibi" width="80" height="24">
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks" role="list">
+      <li><a href="index.html#work">Work</a></li>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#experience">Experience</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main id="main">
+
+  <section class="cs-hero">
+    <div class="cs-hero-grid"></div>
+    <div class="cs-hero-glow"></div>
+    <div class="cs-hero-inner">
+      <p class="cs-eyebrow">Case Study — Design Systems · Government</p>
+      <h1>Ministry of Labour<br><em>Design System</em></h1>
+      <p class="cs-hero-desc">I led the end-to-end design system initiative for Qatar's Ministry of Labour — auditing 9+ platforms, benchmarking mature systems (UAE DS, Singapore DS, GOV.UK), and building a scalable bilingual component library with 50+ components, structured variables, and WCAG 2.1 AA compliance.</p>
+      <div class="cs-meta">
+        <div class="cs-meta-item"><span class="cs-meta-label">My Role</span><span class="cs-meta-value">Senior UX/UI Consultant</span></div>
+        <div class="cs-meta-sep"></div>
+        <div class="cs-meta-item"><span class="cs-meta-label">Organization</span><span class="cs-meta-value">Ministry of Labour, Qatar</span></div>
+        <div class="cs-meta-sep"></div>
+        <div class="cs-meta-item"><span class="cs-meta-label">Year</span><span class="cs-meta-value">2025</span></div>
+        <div class="cs-meta-sep"></div>
+        <div class="cs-meta-item"><span class="cs-meta-label">Tool</span><span class="cs-meta-value">Figma</span></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="cs-metrics">
+    <div class="cs-metric reveal"><span class="cs-metric-num">9+</span><span class="cs-metric-label">Platforms Audited &amp; Unified</span></div>
+    <div class="cs-metric reveal reveal-d1"><span class="cs-metric-num">50+</span><span class="cs-metric-label">Components Built</span></div>
+    <div class="cs-metric reveal reveal-d2"><span class="cs-metric-num">WCAG</span><span class="cs-metric-label">2.1 AA Accessibility Standard</span></div>
+    <div class="cs-metric reveal reveal-d3"><span class="cs-metric-num">AR/EN</span><span class="cs-metric-label">Bilingual RTL/LTR Ready</span></div>
+  </div>
+
+  <div class="cs-content">
+
+    <!-- 01 PROBLEM -->
+    <div class="cs-section reveal">
+      <p class="cs-label">01 — The Problem</p>
+      <h2 class="cs-heading">No unified design language<br><em>across 9+ platforms</em></h2>
+      <p class="cs-body">The Ministry of Labour operates multiple digital platforms — external-facing citizen services and internal tools — designed and developed by different teams over time. As products evolved independently, the user experience became fragmented with inconsistent patterns, duplicated UI decisions, and varying accessibility quality.</p>
+      <p class="cs-body">There was no unified design system to guide teams. No centralized documentation. No shared color palette, typography, or spacing system. Each team built components from scratch — buttons, inputs, cards — spending hours recreating the same patterns. Arabic (RTL) and English (LTR) layouts were handled differently across platforms, with some breaking entirely when switching languages.</p>
+
+      <div class="cs-grid-2">
+        <div class="cs-card">
+          <p class="cs-card-eyebrow">Fragmentation</p>
+          <p class="cs-card-title">Inconsistent visual language</p>
+          <p class="cs-card-text">No shared color palette, typography, or spacing system across 9+ platforms. Each team followed different design rules, accessibility standards, and interaction patterns.</p>
+        </div>
+        <div class="cs-card">
+          <p class="cs-card-eyebrow">Duplication</p>
+          <p class="cs-card-title">Every team built from scratch</p>
+          <p class="cs-card-text">The same components — buttons, inputs, cards — were built multiple times by different teams. Designers spent hours recreating patterns. Developers could not reuse code across platforms.</p>
+        </div>
+        <div class="cs-card">
+          <p class="cs-card-eyebrow">Accessibility</p>
+          <p class="cs-card-title">No WCAG standard enforced</p>
+          <p class="cs-card-text">Color contrast, keyboard navigation, and screen reader support varied by platform. No standard for WCAG compliance existed across any of the Ministry's digital products.</p>
+        </div>
+        <div class="cs-card">
+          <p class="cs-card-eyebrow">Bilingual</p>
+          <p class="cs-card-title">RTL/LTR inconsistency</p>
+          <p class="cs-card-text">Arabic (RTL) and English (LTR) layouts were handled differently across platforms. Some worked. Some broke when switching languages. No systematic approach to bilingual design.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 02 MY ROLE -->
+    <div class="cs-section reveal">
+      <p class="cs-label">02 — My Role</p>
+      <h2 class="cs-heading">I led the end-to-end<br><em>design system initiative</em></h2>
+
+      <ul class="cs-bullets">
+        <li>Audited 9+ external and internal Ministry products</li>
+        <li>Conducted UX audits, heuristic evaluations, and accessibility reviews</li>
+        <li>Clustered findings into system-level themes (colors, typography, spacing, forms, bilingual structure)</li>
+        <li>Benchmarked mature design systems (UAE DS, Singapore DS, GOV.UK)</li>
+        <li>Defined foundations first: colors, typography, spacing, radius, grids, effects</li>
+        <li>Translated foundations into structured variables (primitive + semantic)</li>
+        <li>Built component library on top of variables (50+ components)</li>
+        <li>Created design system documentation for teams</li>
+        <li>Presented to stakeholders and ensured adoption</li>
+      </ul>
+    </div>
+
+    <!-- 03 THE SOLUTION — 3 LAYERS -->
+    <div class="cs-section reveal">
+      <p class="cs-label">03 — The Solution</p>
+      <h2 class="cs-heading">A scalable bilingual design system<br><em>with three layers</em></h2>
+
+      <div class="cs-grid-3">
+        <div class="cs-card">
+          <p class="cs-card-eyebrow">Layer 1</p>
+          <p class="cs-card-title">Foundations</p>
+          <p class="cs-card-text">Core visual foundations every component inherits — colors, typography, spacing, radius, grids, and effect styles. These create consistency at the root level before any component is built.</p>
+        </div>
+        <div class="cs-card">
+          <p class="cs-card-eyebrow">Layer 2</p>
+          <p class="cs-card-title">Variables</p>
+          <p class="cs-card-text">Primitives define raw values. Semantics map those values to UI roles — primary button, error state, link text. This makes the system scalable and maintainable without hard-coded values.</p>
+        </div>
+        <div class="cs-card">
+          <p class="cs-card-eyebrow">Layer 3</p>
+          <p class="cs-card-title">Component Library</p>
+          <p class="cs-card-text">50+ components — buttons, form inputs, cards, navigation, data tables, modals, notification banners. Every component inherits shared foundations and variable logic.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 04 FOUNDATIONS -->
+    <div class="cs-section reveal">
+      <p class="cs-label">04 — Layer 1: Foundations</p>
+      <h2 class="cs-heading">Colors, typography,<br><em>spacing &amp; grids</em></h2>
+
+      <p class="cs-body"><strong>Color System:</strong> 4 primary palettes — Al-Adaam (Primary Colors), Skyline (Secondary A), Palm (Secondary B), and Dune (Tertiary Colors) — plus greyscale core neutrals, success, error, warning, and info semantic palettes. A Qatar Gradient Set was also defined. Dark text colors on light backgrounds and light text colors on dark backgrounds were mapped with specific contrast ratios.</p>
+      <p class="cs-body"><strong>Typography:</strong> Dual-font system — Manrope for English (LTR) and Noto Sans Arabic for Arabic (RTL). Full type scale from Display 2xl through body text, with weight mappings from Light through Bold for both scripts.</p>
+      <p class="cs-body"><strong>Spacing, Radius &amp; Grids:</strong> Systematic spacing scale. Border radius tokens. Responsive grid layouts — Desktop 1280px (12/4/3 column), Tablet 768px (7/2 column), iPhone 375px. Effect styles defined for shadows and elevations.</p>
+<h3 class="cs-heading">Colors</h2>
+      <div class="cs-img-placeholder">
+        <div class="cs-img-placeholder-inner">
+         <img src="IMG/ds1.png">
+        </div>
+      </div>
+      <p class="cs-img-caption">Color System — 4 primary palettes + semantic success/error/warning/info + Qatar Gradient Set</p>
+
+      <h3 class="cs-heading">Typography</h2>
+        <div class="cs-img-placeholder-inner">
+          <img src="IMG/ds2.png">
+        </div>
+      <br>
+      <br>
+     
+
+      <h3 class="cs-heading"><em>spacing </em> & grids system</h2>
+        <div class="cs-img-placeholder-inner">
+          <img src="IMG/ds3.png">
+        </div>
+      
+      <p class="cs-img-caption">Spacing &amp; Grid System — responsive layouts from 12-column desktop to 2-column mobile</p>
+    </div>
+
+    <!-- 05 VARIABLES -->
+    <div class="cs-section reveal">
+      <p class="cs-label">05 — Layer 2: Variables</p>
+      <h2 class="cs-heading">Primitives and semantics —<br><em>the system's backbone</em></h2>
+      <p class="cs-body">After establishing foundations visually, I translated them into structured Figma variables. Primitives define raw values. Semantics map those values to UI roles like primary button, error state, or link text. This two-tier approach means a single primitive change propagates across the entire system — making theming, dark mode, and future updates possible without touching individual components.</p>
+
+      <div class="cs-img-placeholder">
+        <div class="cs-img-placeholder-inner">
+          <img src="IMG/ds4.png">
+        </div>
+      </div>
+      <p class="cs-img-caption">Figma Variables — primitive tokens mapped to semantic roles across the entire component library</p>
+    </div>
+
+    <!-- 06 COMPONENT LIBRARY -->
+    <div class="cs-section reveal">
+      <p class="cs-label">06 — Layer 3: Component Library</p>
+      <h2 class="cs-heading">50+ components built on<br><em>shared foundations</em></h2>
+      <p class="cs-body">With foundations and variables in place, I built the component library — 50+ components including buttons, form inputs, cards, navigation, data tables, modals, and notification banners. Every component inherits shared foundations and variable logic, with full property controls for style, size, RTL support, destructive states, and interaction states.</p>
+
+      <div class="cs-grid-2">
+        <div class="cs-card">
+          <p class="cs-card-eyebrow">Buttons &amp; Avatars</p>
+          <p class="cs-card-title">Full variant system</p>
+          <p class="cs-card-text">Properties: Style (Solid, Neutral, Transparent), Size (sm/md/lg), RTL (true/false), Destructive (true/false), State (default/hovered/pressed/focused/disabled), Lead icon, Button text, Trail icon.</p>
+        </div>
+        <div class="cs-card">
+          <p class="cs-card-eyebrow">Inputs &amp; Text Areas</p>
+          <p class="cs-card-title">Comprehensive form system</p>
+          <p class="cs-card-text">Properties: RTL, Destructive, Required, Hint, Leading/trailing icons, Label, Placeholder text, Image leading. Full state coverage including error validation patterns in both Arabic and English.</p>
+        </div>
+        <div class="cs-card">
+          <p class="cs-card-eyebrow">Cards</p>
+          <p class="cs-card-title">Flexible card system</p>
+          <p class="cs-card-text">Properties: RTL, Type (default/expandable/selectable), State, Effect (stroke/shadow), Expanded, Selected, Title/Description in both EN and AR, Avatar/Icon, Image, Rating, Tags, Custom components slot.</p>
+        </div>
+        <div class="cs-card">
+          <p class="cs-card-eyebrow">System-wide</p>
+          <p class="cs-card-title">Navigation, Tables, Modals</p>
+          <p class="cs-card-text">Navigation bars, data tables with sorting and filtering, modal dialogs, notification banners — all bilingual, all accessible, all powered by the shared variable system for consistent theming.</p>
+        </div>
+      </div>
+
+      
+        <div class="cs-img-placeholder-inner">
+          <img src="IMG/ds5.png">
+        </div>
+      
+      <p class="cs-img-caption">Component Library — 50+ components with full Figma properties, RTL support, and accessibility states</p>
+    </div>
+
+    <!-- 07 BENCHMARKING -->
+    <div class="cs-section reveal">
+      <p class="cs-label">07 — Benchmarking</p>
+      <h2 class="cs-heading">Learning from the best<br><em>government design systems</em></h2>
+      <p class="cs-body">Before building, I benchmarked three mature government design systems to learn from their approaches and avoid reinventing patterns that already had proven solutions:</p>
+
+      <div class="cs-grid-3">
+        <div class="cs-card">
+          <p class="cs-card-eyebrow">Reference 01</p>
+          <p class="cs-card-title">UAE Design System</p>
+          <p class="cs-card-text">Studied how the UAE DS handles bilingual components and RTL layout patterns at government scale — the closest comparable system to what MoL needed.</p>
+        </div>
+        <div class="cs-card">
+          <p class="cs-card-eyebrow">Reference 02</p>
+          <p class="cs-card-title">Singapore DS</p>
+          <p class="cs-card-text">Analyzed Singapore's approach to token architecture and variable structuring — their primitive/semantic split influenced how I organized MoL's variable system.</p>
+        </div>
+        <div class="cs-card">
+          <p class="cs-card-eyebrow">Reference 03</p>
+          <p class="cs-card-title">GOV.UK</p>
+          <p class="cs-card-text">Referenced GOV.UK's documentation standards and accessibility-first component design — the gold standard for government design system governance and adoption.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 08 REFLECTION -->
+    <div class="cs-section reveal">
+      <p class="cs-label">08 — Reflection</p>
+      <h2 class="cs-heading">What I learned about<br><em>design system leadership</em></h2>
+
+      <div class="cs-reflection">
+        <p class="cs-body" style="margin-bottom:18px;">Building the MoL design system taught me that <strong>a design system is 20% components and 80% governance</strong>. The hardest part wasn't defining the color palette or building button variants — it was auditing 9+ products with different teams, clustering findings into actionable themes, and then presenting a unified vision that stakeholders and developers would actually adopt.</p>
+        <p class="cs-body" style="margin-bottom:18px;">The variable architecture was the most important technical decision. Building primitives and semantics as two separate layers meant the system could survive theme changes, dark mode additions, and future brand evolution without touching individual components. It's slower to set up, but it's the difference between a design system that works for 6 months and one that works for 6 years.</p>
+        <p class="cs-body">The bilingual challenge was real. Every component needed to work in Arabic (RTL) and English (LTR) without separate builds. That required rethinking how icons align, how text truncates, how form layouts flow, and how navigation collapses — all controlled through a single RTL property toggle. The result is a system where switching languages is a variable change, not a rebuild.</p>
+      </div>
+    </div>
+
+  </div>
+  </main>
+
+  <nav class="cs-bottom-nav" aria-label="Case study navigation">
+    <a href="index.html#work" class="cs-bottom-nav-item">
+      <span class="cs-bottom-nav-label">← Back</span>
+      <span class="cs-bottom-nav-title">All Projects</span>
+      <span class="cs-bottom-nav-hint">View Portfolio</span>
+    </a>
+    <a href="bicici.html" class="cs-bottom-nav-item" style="text-align:right;">
+      <span class="cs-bottom-nav-label">Next →</span>
+      <span class="cs-bottom-nav-title">BICICI — Smart Data Workspace</span>
+      <span class="cs-bottom-nav-hint">AI Product Recommendation · BNP Paribas</span>
+    </a>
+  </nav>
+
+  <footer class="cs-footer">
+    <div class="cs-footer-logo"><img src="IDRIS LOGO.png" alt="Idris Hedhibi"></div>
+    <p class="cs-footer-copy">© 2026 — Idris Hedhibi - Senior Product Designer - Doha, Qatar</p>
+    <a href="index.html#contact" class="cs-footer-link">Get in touch →</a>
+  </footer>
+  <script src="js/main.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DGA Accessibility Guidelines — Saudi Arabia · Idris Hedhibi</title>
+  <meta name="description" content="Case study: How I conducted accessibility research across Tawakkalna, Sehatty, and Absher — producing Saudi Arabia's national digital accessibility guidelines at PwC Middle East.">
+  <script src="https://unpkg.com/@phosphor-icons/web@2.1.1" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+    <nav id="mainNav">
+    <a href="index.html" class="nav-logo">
+      <img src="IDRIS LOGO.png" alt="Idris Hedhibi" width="80" height="24">
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks" role="list">
+      <li><a href="index.html#work">Work</a></li>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#experience">Experience</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main id="main">
+
+  <section class="cs-hero">
+    <div class="cs-hero-grid"></div>
+    <div class="cs-hero-glow"></div>
+    <div class="cs-hero-inner">
+      <p class="cs-eyebrow">Case Study — Accessibility · UX Research</p>
+      <h1>DGA <em>Accessibility</em><br>Guidelines —<br>Saudi Arabia</h1>
+      <p class="cs-hero-desc">I conducted accessibility assessments of Saudi Arabia's 3 most critical government platforms — Tawakkalna, Sehatty, and Absher — with 21 participants including people with vision disabilities and elderly citizens (75–90+ years). The work produced a comprehensive national accessibility guidelines document aligned with WCAG 2.2.</p>
+      <div class="cs-meta">
+        <div class="cs-meta-item"><span class="cs-meta-label">My Role</span><span class="cs-meta-value">Senior UX/UI Consultant</span></div>
+        <div class="cs-meta-sep"></div>
+        <div class="cs-meta-item"><span class="cs-meta-label">Company</span><span class="cs-meta-value">PwC Middle East</span></div>
+        <div class="cs-meta-sep"></div>
+        <div class="cs-meta-item"><span class="cs-meta-label">Client</span><span class="cs-meta-value">Digital Government Authority (DGA)</span></div>
+        <div class="cs-meta-sep"></div>
+        <div class="cs-meta-item"><span class="cs-meta-label">Duration</span><span class="cs-meta-value">7 months (2023)</span></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="cs-recognition reveal">
+    <div class="cs-recognition-icon"><i class="ph-fill ph-medal"></i></div>
+    <div>
+      <p class="cs-recognition-label">National Impact</p>
+      <p class="cs-recognition-title">Contributed to Saudi Arabia's #1 MENA ranking in e-government service maturity (ESCWA 2022/2023) · DGA Digital Inclusion Program</p>
+      <p class="cs-recognition-sub">#3 globally in World Bank's Digital Government Maturity Index · 91.3% establishments using e-government (GASTAT 2023)</p>
+    </div>
+  </div>
+
+  <div class="cs-metrics">
+    <div class="cs-metric reveal"><span class="cs-metric-num">21</span><span class="cs-metric-label">Research Participants</span></div>
+    <div class="cs-metric reveal reveal-d1"><span class="cs-metric-num">3</span><span class="cs-metric-label">Government Platforms Tested</span></div>
+    <div class="cs-metric reveal reveal-d2"><span class="cs-metric-num">WCAG</span><span class="cs-metric-label">2.1 A/AA/AAA Assessed</span></div>
+    <div class="cs-metric reveal reveal-d3"><span class="cs-metric-num">#1</span><span class="cs-metric-label">MENA E-Gov Service Maturity</span></div>
+  </div>
+
+  <div class="cs-content">
+
+    <!-- 01 PROBLEM -->
+    <div class="cs-section reveal">
+      <p class="cs-label">01 — The Problem</p>
+      <h2 class="cs-heading">Government platforms were<br><em>not fully accessible</em></h2>
+      <p class="cs-body">Saudi Vision 2030 aims to create a digitally inclusive society, with the National Transformation Program specifically targeting digital inclusion of all people with disabilities and elderly. Research found 1.4 million people with disabilities (4.2% of population) and 1.6 million elderly citizens (4.8%) — a combined 3 million people who needed accessible digital government services.</p>
+      <p class="cs-body">Despite Saudi Arabia's impressive digital achievements — 97.7% of establishments with internet access, 91.3% using e-government services — the DGA identified a critical gap: government platforms were not fully accessible. There were no unified national accessibility standards that design and development teams could reference, resulting in inconsistent and often inaccessible experiences across platforms.</p>
+    </div>
+
+    <!-- 02 WHAT WE TESTED -->
+    <div class="cs-section reveal">
+      <p class="cs-label">02 — What We Tested</p>
+      <h2 class="cs-heading">3 of Saudi Arabia's most<br><em>critical digital platforms</em></h2>
+
+      <div class="cs-grid-3">
+        <div class="cs-card" style="text-align:center;">
+          <div style="background:var(--bg-3);border:1px dashed var(--gray-3);aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;margin-bottom:16px;overflow:hidden;">
+            <div style="text-align:center;">
+              <span style="font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gray-2);"><img src="IMG/TAWAKALNA.png" alt="TAWAKALNA logo"></span>
+            </div>
+          </div>
+          <p class="cs-card-eyebrow">Platform 01</p>
+          <p class="cs-card-title">Tawakkalna</p>
+          <p class="cs-card-text">The national super app that combines all government services and information in one place — from essential services to important documents. Saudi Arabia's most-used government platform.</p>
+        </div>
+        <div class="cs-card" style="text-align:center;">
+          <div style="background:var(--bg-3);border:1px dashed var(--gray-3);aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;margin-bottom:16px;overflow:hidden;">
+            <div style="text-align:center;">
+             
+              <span style="font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gray-2);"><img src="IMG/SEHATY.png" alt="Sehatty logo"></span>
+            </div>
+          </div>
+          <p class="cs-card-eyebrow">Platform 02</p>
+          <p class="cs-card-title">Sehatty</p>
+          <p class="cs-card-text">The national health platform established by the Ministry of Health. Aligns with the Kingdom's vision to improve access to care, quality of services, and health awareness within the community.</p>
+        </div>
+        <div class="cs-card" style="text-align:center;">
+          <div style="background:var(--bg-3);border:1px dashed var(--gray-3);aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;margin-bottom:16px;overflow:hidden;">
+            <div style="text-align:center;">
+             
+              <span style="font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gray-2);"><img src="IMG/ABSHER.png" alt="Sehatty logo"></span>
+            </div>
+          </div>
+          <p class="cs-card-eyebrow">Platform 03</p>
+          <p class="cs-card-title">Absher</p>
+          <p class="cs-card-text">The official application of the Ministry of Interior's electronic platform, providing government services to citizens, residents, and visitors — from ID management to travel permissions.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 03 METHODOLOGY -->
+    <div class="cs-section reveal">
+      <p class="cs-label">03 — Research Methodology</p>
+      <h2 class="cs-heading">How I tested<br><em>with real users</em></h2>
+      <p class="cs-body">We conducted qualitative accessibility assessments against WCAG 2.1 success criteria at Levels A, AA, and AAA. The research combined in-person focus groups, assistive technology testing, task-based usability testing on live platforms, and WCAG gap analysis for each platform.</p>
+
+      <div class="cs-grid-2">
+        <div class="cs-card">
+          <p class="cs-card-eyebrow">Session 01 — Vision Disabilities</p>
+          <p class="cs-card-title">13 participants</p>
+          <p class="cs-card-text">People with vision disabilities testing using their personal phones and screen readers. VoiceOver screen reader testing on iPhone devices. Tested main flows in each application to understand real-world barriers. Explored daily interaction patterns with government services.</p>
+        </div>
+        <div class="cs-card">
+          <p class="cs-card-eyebrow">Session 02 — Elderly (75–90+ years)</p>
+          <p class="cs-card-title">8 participants</p>
+          <p class="cs-card-text">Elderly participants testing using their personal phones. Focused on main flows in each application and daily tasks. Explored how seniors interact with government digital services and what barriers prevent independent use.</p>
+        </div>
+      </div>
+
+      <div class="cs-tags">
+        <span class="cs-tag">In-Person Focus Groups</span>
+        <span class="cs-tag">VoiceOver Testing</span>
+        <span class="cs-tag">Screen Reader Analysis</span>
+        <span class="cs-tag">Task-Based Usability</span>
+        <span class="cs-tag">WCAG 2.1 Gap Analysis</span>
+        <span class="cs-tag">21 Participants</span>
+      </div>
+    </div>
+
+    <!-- 04 KEY FINDINGS -->
+    <div class="cs-section reveal">
+      <p class="cs-label">04 — Key Findings</p>
+      <h2 class="cs-heading">What the research<br><em>revealed</em></h2>
+      <p class="cs-body">The testing sessions exposed systematic accessibility barriers across all three platforms. One finding stood out: screen readers were misreading buttons as "images" — meaning visually impaired users couldn't identify what interactive elements did. This single finding shaped how we formulated the guidelines for semantic HTML and ARIA labelling.</p>
+
+      <div class="cs-img-placeholder">
+        <div class="cs-img-placeholder-inner">
+        <img src="IMG/dga1.png">
+             </div>
+      </div>
+      <p class="cs-img-caption">Accessibility audit — annotated findings showing WCAG violations across all 3 government platforms</p>
+
+      <div class="cs-img-placeholder">
+        <div class="cs-img-placeholder-inner">
+           <img src="IMG/dga session.png">
+        </div>
+      </div>
+      <p class="cs-img-caption">In-person research sessions — testing with people with vision disabilities and elderly participants (75–90+ years)</p>
+    </div>
+
+    <!-- 05 THE OUTPUT -->
+    <div class="cs-section reveal">
+      <p class="cs-label">05 — The Output</p>
+      <h2 class="cs-heading">National accessibility<br><em>guidelines document</em></h2>
+      <p class="cs-body">The primary deliverable was a comprehensive accessibility guidelines document — a practical reference for both designers and developers. The document was aligned with the DGA Web Accessibility Framework (WCAG 2.2) and included entity-specific gap reports for each of the 3 platforms tested.</p>
+
+      <div class="cs-grid-2">
+        <div class="cs-card">
+          <p class="cs-card-eyebrow">For Designers</p>
+          <p class="cs-card-title">WCAG 2.1 success criteria with practical examples</p>
+          <p class="cs-card-text">Simplified, actionable guidelines — colour contrast ratios, touch target sizes, focus state patterns, form design standards, error handling, and inclusive interaction patterns. Each criterion illustrated with real examples from the audit findings.</p>
+        </div>
+        <div class="cs-card">
+          <p class="cs-card-eyebrow">For Developers</p>
+          <p class="cs-card-title">Implementation techniques and assessment tools</p>
+          <p class="cs-card-text">ARIA landmark usage, keyboard navigation patterns, semantic HTML requirements, screen reader testing checklists, and an accessibility assessment tools matrix. Entity-specific gap reports for Tawakkalna, Sehatty, and Absher.</p>
+        </div>
+      </div>
+
+      <div class="cs-img-placeholder">
+        <div class="cs-img-placeholder-inner">
+          <img src="IMG/dga pdf.png">
+        </div>
+      </div>
+      <p class="cs-img-caption">DGA National Accessibility Guidelines — designer and developer reference aligned with WCAG 2.2</p>
+    </div>
+
+    <!-- 06 IMPACT -->
+    <div class="cs-section reveal">
+      <p class="cs-label">06 — Impact</p>
+      <h2 class="cs-heading">Supporting Saudi Arabia's<br><em>global digital leadership</em></h2>
+      <p class="cs-body">The insights from the user testing sessions — particularly findings like screen readers misreading interactive elements — helped formulate practical guidelines that enable designers and developers to build more inclusive products. The work directly contributed to the DGA's national accessibility objectives.</p>
+
+      <div class="cs-grid-2">
+        <div class="cs-card">
+          <p class="cs-card-eyebrow">Regional Rankings</p>
+          <p class="cs-card-title">#1 in MENA</p>
+          <p class="cs-card-text">The project supported Saudi Arabia's continued #1 ranking in the MENA region for e-government service maturity (ESCWA 2022/2023) and its advancement to #3 globally in the World Bank's Digital Government Maturity Index.</p>
+        </div>
+        <div class="cs-card">
+          <p class="cs-card-eyebrow">DGA Program</p>
+          <p class="cs-card-title">Digital Inclusion Program</p>
+          <p class="cs-card-text">The research contributed to the DGA's broader Digital Inclusion Program — which now includes usability and inclusivity testing services, the Accessibility Ease initiative, and the Digital Experience Maturity Index with a dedicated Digital Inclusion sub-index.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 07 DGA WEBSITE REDESIGN -->
+    <div class="cs-section reveal">
+      <p class="cs-label">07 — Design Delivery</p>
+      <h2 class="cs-heading">Full UX/UI redesign of<br><em>the DGA website</em></h2>
+      <p class="cs-body">Beyond the guidelines document, I delivered a complete UX/UI redesign of the DGA's own website — applying every accessibility standard documented in the guidelines. The redesign served as the reference implementation, proving that the guidelines were not just theoretical but practically achievable on a real government platform.</p>
+      <p class="cs-body">The redesigned DGA website achieved WCAG compliance and demonstrated the full range of accessible patterns — proper semantic structure, keyboard navigation, screen reader compatibility, sufficient contrast ratios, accessible forms, and bilingual AR/EN support with correct RTL layout behaviour.</p>
+
+      <div class="cs-img-placeholder">
+        <div class="cs-img-placeholder-inner">
+          <div class="cs-img-placeholder-icon"><i class="ph ph-device-mobile"></i></div>
+          <img src="IMG/dga website.png" alt="">
+        </div>
+      </div>
+      <p class="cs-img-caption">DGA Responsive Website — WCAG-compliant components across desktop and mobile</p>
+
+      <div class="cs-grid-2">
+        <div class="cs-card">
+          <p class="cs-card-eyebrow">What I Redesigned</p>
+          <p class="cs-card-title">Full website experience</p>
+          <p class="cs-card-text">Homepage, service pages, navigation architecture, forms, search, and content pages — all rebuilt with accessible patterns. Semantic HTML structure, ARIA landmarks, skip navigation, focus management, and proper heading hierarchy throughout.</p>
+        </div>
+        <div class="cs-card">
+          <p class="cs-card-eyebrow">Why It Matters</p>
+          <p class="cs-card-title">Guidelines in practice</p>
+          <p class="cs-card-text">The DGA website redesign was proof that the accessibility guidelines work in production — not just in documentation. Other government teams could reference both the guidelines and the live DGA site as a working example of compliant implementation.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 08 REFLECTION -->
+    <div class="cs-section reveal">
+      <p class="cs-label">08 — Reflection</p>
+      <h2 class="cs-heading">What I learned about<br><em>policy-level accessibility</em></h2>
+
+      <div class="cs-reflection">
+        <p class="cs-body" style="margin-bottom:18px;">This was the first time I understood that <strong>accessibility is a policy problem as much as a design problem</strong>. The violations I found weren't caused by teams who didn't care — they were caused by teams with no shared standard to work from. My job wasn't just to find issues. It was to create the standard that would prevent them from recurring across every ministry.</p>
+        <p class="cs-body" style="margin-bottom:18px;">Watching a visually impaired participant try to navigate a government form with a screen reader — struggling with an unlabelled input field, confused by an error message that appeared in the wrong place — made abstract WCAG criteria viscerally real. It changed how I think about every interface I design. Those 13 participants taught me more about usability in two sessions than years of reading documentation.</p>
+        <p class="cs-body">The elderly session was equally important. A 85-year-old participant trying to access Absher on their phone revealed that accessibility isn't just about assistive technology — it's about cognitive load, text size, tap target size, and flow complexity. Designing for a screen reader user and designing for an elderly user require different strategies, but both start with the same principle: understand how they actually use the product, not how you assume they do.</p>
+      </div>
+    </div>
+
+  </div>
+  </main>
+
+  <nav class="cs-bottom-nav" aria-label="Case study navigation">
+    <a href="mobile-id.html" class="cs-bottom-nav-item">
+      <span class="cs-bottom-nav-label">← Previous</span>
+      <span class="cs-bottom-nav-title">Mobile ID — Digital Identity Backbone</span>
+      <span class="cs-bottom-nav-hint">e-Houwiya · Tunisia</span>
+    </a>
+    <a href="index.html#work" class="cs-bottom-nav-item" style="text-align:right;">
+      <span class="cs-bottom-nav-label">All Work →</span>
+      <span class="cs-bottom-nav-title">Back to Portfolio</span>
+      <span class="cs-bottom-nav-hint">View all projects</span>
+    </a>
+  </nav>
+
+  <footer class="cs-footer">
+    <div class="cs-footer-logo"><img src="IDRIS LOGO.png" alt="Idris Hedhibi"></div>
+    <p class="cs-footer-copy">© 2026 — Idris Hedhibi - Senior Product Designer - Doha, Qatar</p>
+    <a href="index.html#contact" class="cs-footer-link">Get in touch →</a>
+  </footer>
+  <script src="js/main.js" defer></script>
+</body>
+</html>
