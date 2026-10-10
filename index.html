@@ -1,560 +1,1050 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Idris Hedhibi — Senior Product Designer &amp; UX Consultant</title>
-  <meta name="description" content="Senior UX/UI Consultant with 6+ years designing national-scale government platforms, AI systems, and design systems across Qatar, Saudi Arabia, and Tunisia.">
-  <meta name="keywords" content="UX Designer, Product Designer, Qatar, MENA, Government, Design Systems, Accessibility, AI, Ministry of Labour">
-  <meta property="og:title" content="Idris Hedhibi — Senior Product Designer">
-  <meta property="og:description" content="6+ years shaping national-scale government platforms across the MENA region.">
-  <meta property="og:type" content="website">
-  <script src="https://unpkg.com/@phosphor-icons/web@2.1.1" defer></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="icon" type="image/svg+xml" href="favicon.svg">
-  <link rel="stylesheet" href="css/style.css">
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-RQHN3FB2PT"></script>
-  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-RQHN3FB2PT');</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Idris Hedhibi — Senior Product Designer. National-scale government and AI platforms across the Gulf. Bilingual AR/EN design systems, WCAG 2.2 AA accessibility.">
+<title>Idris Hedhibi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  /* Immersive SPA: Lenis smooth scroll, GSAP intro + page-wipe, custom cursor, oversized Syne type, hover-reveal project rows. */
+  :root{
+    --bg:#0C0E0D; --surface:#121613; --fg:#EFF2EE; --muted:#868F89;
+    --line:#1F241F; --accent:#34D399; --accent-2:#E4E8E4; --accent-soft:rgba(52,211,153,0.12);
+    --max:1300px; --col:60ch;
+    --display:"Syne",system-ui,sans-serif;
+    --sans:"IBM Plex Sans",system-ui,-apple-system,sans-serif;
+    --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+    color-scheme:dark;
+  }
+  @media (prefers-color-scheme:light){:root:not([data-theme="dark"]){
+    --bg:#F2F3F0; --surface:#E7EAE5; --fg:#121613; --muted:#5F665F;
+    --line:#D6DAD4; --accent:#0E9F6E; --accent-2:#121613; --accent-soft:rgba(14,159,110,0.1);
+    color-scheme:light;
+  }}
+  :root[data-theme="light"]{
+    --bg:#F2F3F0; --surface:#E7EAE5; --fg:#121613; --muted:#5F665F;
+    --line:#D6DAD4; --accent:#0E9F6E; --accent-2:#121613; --accent-soft:rgba(14,159,110,0.1);
+    color-scheme:light;
+  }
+
+  *{box-sizing:border-box}
+  body{background:var(--bg);color:var(--fg);font-family:var(--sans);line-height:1.55;
+    -webkit-font-smoothing:antialiased;letter-spacing:-0.005em;overflow-x:hidden;margin:0}
+  .wrap{max-width:var(--max);margin:0 auto;padding-inline:clamp(20px,5vw,72px)}
+  a{color:inherit;text-decoration:none}
+  h1,h2,h3{margin:0;font-weight:700;text-wrap:balance}
+  p{margin:0}
+  img{max-width:100%;display:block}
+  ::selection{background:var(--accent);color:var(--bg)}
+
+  .skip{position:fixed;left:-9999px;top:0;background:var(--accent);color:var(--bg);
+    padding:10px 16px;border-radius:6px;z-index:500;font-weight:600}
+  .skip:focus{left:16px;top:16px}
+  :focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
+
+  /* grain */
+  .grain{position:fixed;inset:-50%;z-index:400;pointer-events:none;opacity:.05;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    mix-blend-mode:overlay;animation:grain 8s steps(6) infinite}
+  @keyframes grain{0%,100%{transform:translate(0,0)}20%{transform:translate(-5%,3%)}40%{transform:translate(3%,-4%)}60%{transform:translate(-3%,2%)}80%{transform:translate(4%,4%)}}
+
+  /* custom cursor */
+  .cursor,.cursor-ring{position:fixed;top:0;left:0;z-index:450;pointer-events:none;border-radius:50%;
+    transform:translate(-50%,-50%);mix-blend-mode:difference}
+  .cursor{width:7px;height:7px;background:#fff}
+  .cursor-ring{width:40px;height:40px;border:1px solid #fff;transition:width .3s,height .3s,opacity .3s;opacity:.5}
+  .cursor-ring.grow{width:70px;height:70px;opacity:.9}
+  body.hide-native{cursor:none}
+  @media (hover:none),(pointer:coarse){.cursor,.cursor-ring{display:none!important}body.hide-native{cursor:auto}}
+
+  /* loader */
+  .loader{position:fixed;inset:0;z-index:600;background:var(--bg);display:flex;align-items:center;
+    justify-content:center;flex-direction:column;gap:18px}
+  .loader-word{font-family:var(--display);font-weight:800;font-size:clamp(34px,8vw,72px);
+    overflow:hidden;line-height:1}
+  .loader-word span{display:inline-block;transform:translateY(110%)}
+  .loader-bar{width:min(240px,50vw);height:1px;background:var(--line);position:relative;overflow:hidden}
+  .loader-bar::after{content:"";position:absolute;inset:0;background:var(--accent);transform:translateX(-100%)}
+  .loader-pct{font-family:var(--mono);font-size:12px;color:var(--muted);letter-spacing:.1em}
+
+  /* page transition panel */
+  .pt{position:fixed;inset:0;z-index:550;background:var(--accent);transform:scaleY(0);
+    transform-origin:bottom;pointer-events:none}
+
+  /* progress */
+  .progress{position:fixed;top:0;left:0;height:2px;width:0;background:var(--accent);z-index:120}
+
+  /* nav */
+  header.bar{position:fixed;top:0;left:0;right:0;z-index:300;padding-top:env(safe-area-inset-top,0px);
+    transition:background .3s}
+  header.bar.scrolled{background:color-mix(in srgb,var(--bg) 82%,transparent);backdrop-filter:blur(14px)}
+  .bar .wrap{max-width:none;display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:20px}
+  .brand{display:inline-flex;align-items:center;color:var(--fg)}
+  .brand svg.logo{height:20px;width:auto;display:block}
+  .loader-word svg.logo{height:clamp(30px,6vw,56px);width:auto;display:block}
+  nav.main{display:flex;align-items:center;gap:clamp(16px,2.5vw,32px)}
+  nav.main a{font-size:13px;color:var(--muted);position:relative;transition:color .2s;overflow:hidden}
+  nav.main a span{display:inline-block;transition:transform .35s cubic-bezier(.6,0,.2,1)}
+  nav.main a:hover{color:var(--fg)}
+  nav.main a[aria-current="page"]{color:var(--fg)}
+  .toggle{background:none;border:1px solid var(--line);color:var(--muted);width:36px;height:36px;
+    border-radius:50%;cursor:pointer;display:grid;place-items:center;flex:none;transition:.25s}
+  .toggle:hover{color:var(--fg);border-color:var(--muted);transform:rotate(90deg)}
+  .toggle svg{width:16px;height:16px}
+  @media(max-width:560px){nav.main a{display:none}}
+
+  main{display:block}
+  .view[hidden]{display:none!important}
+
+  .eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);display:block}
+
+  /* ===== HERO ===== */
+  .hero{min-height:100svh;display:grid;grid-template-columns:1.15fr 0.85fr;gap:clamp(30px,5vw,72px);
+    align-items:center;padding-block:clamp(110px,15vh,170px) clamp(40px,6vw,70px);position:relative}
+  @media(max-width:900px){.hero{grid-template-columns:1fr;gap:48px;align-items:start}}
+  .hero-left{display:flex;flex-direction:column}
+  .hero-top{display:flex;flex-direction:column;gap:6px;margin-bottom:clamp(20px,3vw,32px)}
+  .hero-top .eyebrow{max-width:34ch;line-height:1.7}
+  .hero h1{font-family:var(--display);font-weight:800;font-size:clamp(44px,7.5vw,100px);
+    line-height:0.85;letter-spacing:-0.02em;text-transform:uppercase}
+  .hero h1 .ln{display:block;overflow:hidden}
+  .hero h1 .ln > span{display:block;will-change:transform}
+  .hero h1{transition:color .4s}
+  .hero-left:hover h1{color:var(--accent)}
+  .hero-lede{font-size:clamp(16px,1.6vw,19px);max-width:42ch;color:var(--fg);line-height:1.5;margin-top:clamp(24px,3vw,36px)}
+  .hero-lede .mut{color:var(--muted)}
+  .scrollcue{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+    color:var(--muted);display:flex;align-items:center;gap:10px;margin-top:clamp(30px,5vw,54px)}
+  .scrollcue svg{width:14px;height:14px;animation:bob 1.8s ease-in-out infinite}
+  @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(5px)}}
+
+  /* portrait + animated illustration */
+  .portrait-wrap{position:relative;justify-self:center;width:min(100%,400px);aspect-ratio:4/5}
+  .portrait{position:relative;z-index:2;width:100%;height:100%;border-radius:18px;overflow:hidden;
+    border:1px solid var(--line);background:var(--surface)}
+  .portrait img{width:100%;height:100%;object-fit:cover;filter:grayscale(.15) contrast(1.02)}
+  .portrait::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,color-mix(in srgb,var(--bg) 55%,transparent));pointer-events:none}
+
+  /* section mini-illustrations */
+  .sec-illu{width:32px;height:32px;color:var(--accent);margin-bottom:18px;animation:floatY 4.5s ease-in-out infinite}
+  @keyframes floatY{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+
+  /* download CV */
+  .exp-head{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:clamp(22px,3vw,34px)}
+  .btn-dl{display:inline-flex;align-items:center;gap:9px;border:1px solid var(--accent);color:var(--accent);
+    border-radius:999px;padding:11px 20px;font-family:var(--mono);font-size:12px;letter-spacing:.04em;
+    text-transform:uppercase;transition:background .25s,color .25s,transform .25s}
+  .btn-dl:hover{background:var(--accent);color:var(--bg);transform:translateY(-2px)}
+  .btn-dl svg{width:15px;height:15px}
+
+  /* experience: résumé illustration */
+  .exp-sec{text-align:center}
+  .exp-sub{color:var(--muted);max-width:48ch;margin:22px auto 0;font-size:16px;line-height:1.55}
+  .resume-illu{position:relative;width:min(100%,300px);margin:clamp(34px,5vw,50px) auto 0;
+    background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:22px;
+    display:flex;flex-direction:column;gap:15px;text-align:left;
+    box-shadow:0 24px 60px rgba(0,0,0,.18);animation:floatY 5.5s ease-in-out infinite}
+  .rz-head{display:flex;align-items:center;gap:14px}
+  .rz-ava{width:42px;height:42px;border-radius:50%;background:var(--accent);flex:none;animation:pulseA 3s ease-in-out infinite}
+  @keyframes pulseA{0%,100%{box-shadow:0 0 0 0 var(--accent-soft)}50%{box-shadow:0 0 0 9px transparent}}
+  .rz-htxt{display:flex;flex-direction:column;gap:7px;flex:1}
+  .rz-htxt span,.rz-lines span{height:7px;border-radius:4px;background:var(--line);transform-origin:left;
+    animation:fillLine 4.8s ease-in-out infinite}
+  .rz-htxt span:nth-child(1){width:70%}
+  .rz-htxt span:nth-child(2){width:45%;background:var(--accent);opacity:.55;animation-delay:.2s}
+  .rz-lines{display:flex;flex-direction:column;gap:10px}
+  .rz-lines span:nth-child(1){width:100%}
+  .rz-lines span:nth-child(2){width:92%;animation-delay:.3s}
+  .rz-lines span:nth-child(3){width:96%;animation-delay:.6s}
+  .rz-lines span:nth-child(4){width:58%;animation-delay:.9s}
+  .rz-lines span:nth-child(5){width:88%;background:var(--accent);opacity:.5;animation-delay:1.2s}
+  .rz-lines span:nth-child(6){width:40%;animation-delay:1.5s}
+  @keyframes fillLine{0%{transform:scaleX(0)}18%{transform:scaleX(1)}82%{transform:scaleX(1)}100%{transform:scaleX(0)}}
+  .rz-tag{align-self:flex-start;font-family:var(--mono);font-size:10px;letter-spacing:.06em;text-transform:uppercase;
+    color:var(--accent);border:1px solid color-mix(in srgb,var(--accent) 35%,transparent);border-radius:999px;padding:4px 11px}
+  .exp-dl{margin-top:clamp(30px,4vw,42px)}
+  .illu{position:absolute;inset:-13%;z-index:1;pointer-events:none}
+  .illu svg{width:100%;height:100%;overflow:visible}
+  .illu .ring{fill:none;transform-origin:50% 50%}
+  .illu .d1{stroke:var(--accent);stroke-opacity:.45;stroke-dasharray:3 11;animation:spin 26s linear infinite}
+  .illu .d2{stroke:var(--accent);stroke-opacity:.3;stroke-dasharray:1.5 15;animation:spin 38s linear infinite reverse}
+  .illu .orbit{transform-origin:50% 50%}
+  .illu .o1{animation:spin 15s linear infinite}
+  .illu .o2{animation:spin 21s linear infinite reverse}
+  .illu .orb{fill:var(--accent)}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  .floaty{position:absolute;z-index:3;border-radius:9px;background:var(--bg);border:1px solid var(--line);
+    padding:9px 13px;font-family:var(--mono);font-size:11px;color:var(--fg);display:inline-flex;align-items:center;
+    gap:8px;box-shadow:0 14px 34px rgba(0,0,0,.2);white-space:nowrap}
+  .floaty .b{width:7px;height:7px;border-radius:50%;background:var(--accent);flex:none}
+  .floaty.f1{top:7%;left:-7%;animation:float1 5s ease-in-out infinite}
+  .floaty.f2{bottom:11%;right:-9%;animation:float2 6.5s ease-in-out infinite}
+  @media(max-width:900px){.floaty.f1{left:-2%}.floaty.f2{right:-2%}}
+  @keyframes float1{0%,100%{transform:translateY(0)}50%{transform:translateY(-13px)}}
+  @keyframes float2{0%,100%{transform:translateY(0)}50%{transform:translateY(11px)}}
+
+  /* marquee */
+  .marquee{border-block:1px solid var(--line);padding-block:20px;overflow:hidden;white-space:nowrap;
+    display:flex;gap:0}
+  .marquee-track{display:inline-flex;gap:40px;padding-right:40px;animation:scrollx 26s linear infinite;flex:none}
+  .marquee:hover .marquee-track{animation-play-state:paused}
+  .marquee span{font-family:var(--display);font-weight:700;font-size:clamp(22px,3vw,40px);
+    text-transform:uppercase;letter-spacing:-0.01em;color:var(--muted);display:inline-flex;align-items:center;gap:40px}
+  .marquee span::after{content:"◆";color:var(--accent);font-size:.5em}
+  @keyframes scrollx{to{transform:translateX(-50%)}}
+
+  /* ===== WORKS ===== */
+  .works-head{padding-block:clamp(60px,10vw,120px) clamp(24px,4vw,44px);display:flex;
+    justify-content:space-between;align-items:baseline;gap:20px;flex-wrap:wrap}
+  .works-head h2{font-family:var(--display);font-weight:700;font-size:clamp(28px,4vw,48px);text-transform:uppercase}
+  .works{border-top:1px solid var(--line)}
+  .work-row{display:block;border-bottom:1px solid var(--line);padding-block:clamp(26px,4vw,44px);position:relative}
+  .work-row .row-inner{display:flex;align-items:center;justify-content:space-between;gap:24px;
+    position:relative;z-index:2;transition:transform .5s cubic-bezier(.16,1,.3,1),padding .5s cubic-bezier(.16,1,.3,1)}
+  .work-row:hover .row-inner{transform:translateX(clamp(10px,2vw,28px))}
+  .work-row .rn{font-family:var(--mono);font-size:12px;color:var(--muted);width:40px;flex:none}
+  .work-row .rt{flex:1;min-width:0}
+  .work-row h3{font-family:var(--display);font-weight:700;font-size:clamp(28px,6vw,74px);
+    line-height:0.95;text-transform:uppercase;letter-spacing:-0.02em;transition:color .3s;
+    -webkit-text-stroke:0 var(--accent)}
+  .work-row:hover h3{color:var(--accent)}
+  .work-row .rmeta{font-family:var(--mono);font-size:11px;letter-spacing:.05em;text-transform:uppercase;
+    color:var(--muted);margin-top:14px;display:flex;gap:14px;flex-wrap:wrap}
+  .work-row .rarrow{flex:none;color:var(--muted);transition:transform .5s cubic-bezier(.16,1,.3,1),color .3s}
+  .work-row:hover .rarrow{transform:translate(6px,-6px);color:var(--accent)}
+  .work-row .rarrow svg{width:clamp(26px,3vw,40px);height:clamp(26px,3vw,40px)}
+  .work-row::before{content:"";position:absolute;inset:0;background:var(--accent-soft);
+    transform:scaleY(0);transform-origin:bottom;transition:transform .5s cubic-bezier(.16,1,.3,1);z-index:1}
+  .work-row:hover::before{transform:scaleY(1)}
+
+  /* floating hover peek */
+  .peek{position:fixed;top:0;left:0;z-index:140;pointer-events:none;border-radius:999px;
+    background:var(--accent);color:var(--bg);padding:7px 14px;opacity:0;white-space:nowrap;
+    transform:translate(-50%,-180%) scale(.9);transition:opacity .28s,transform .28s}
+  .peek.on{opacity:1;transform:translate(-50%,-180%) scale(1)}
+  .peek .pk-label{font-family:var(--mono);font-size:10.5px;letter-spacing:.05em;text-transform:uppercase}
+  @media (hover:none),(pointer:coarse){.peek{display:none}}
+
+  /* sections */
+  .sec{padding-block:clamp(60px,9vw,120px);border-top:1px solid var(--line)}
+  .sec-tag{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+    color:var(--accent);margin-bottom:26px}
+  .big{font-family:var(--display);font-weight:700;font-size:clamp(30px,5.5vw,68px);line-height:1.0;
+    text-transform:uppercase;letter-spacing:-0.02em}
+  .about-grid{display:grid;grid-template-columns:1.25fr 1fr;gap:clamp(32px,6vw,80px);margin-top:clamp(36px,5vw,60px)}
+  @media(max-width:820px){.about-grid{grid-template-columns:1fr;gap:40px}}
+  .about-grid .body p{font-size:clamp(16px,2vw,19px);max-width:var(--col)}
+  .about-grid .body p+p{margin-top:18px}
+  .skillset{display:flex;flex-direction:column;gap:18px}
+  .skillgroup h4{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;
+    color:var(--accent);margin-bottom:8px}
+  .skillgroup p{font-size:14.5px;line-height:1.7;color:var(--muted)}
+  .signature{background:var(--accent-soft);border:1px solid color-mix(in srgb,var(--accent) 28%,transparent);
+    border-radius:12px;padding:18px 20px}
+  .signature p{color:var(--fg);font-weight:500}
+
+  .exp{margin-top:clamp(30px,4vw,50px);border-top:1px solid var(--line)}
+  .exp-row{display:grid;grid-template-columns:210px 1fr;gap:clamp(16px,4vw,48px);
+    padding-block:clamp(22px,3vw,32px);border-bottom:1px solid var(--line)}
+  @media(max-width:680px){.exp-row{grid-template-columns:1fr;gap:8px}}
+  .exp-when{font-family:var(--mono);font-size:12px;color:var(--muted);line-height:1.6}
+  .exp-what h3{font-family:var(--display);font-weight:700;font-size:20px;text-transform:uppercase;margin-bottom:3px}
+  .exp-what .org{color:var(--accent);font-size:14px;font-family:var(--mono);margin-bottom:12px}
+  .exp-what p{color:var(--muted);font-size:15px;max-width:60ch}
+
+  .contact{text-align:center;padding-block:clamp(70px,12vw,160px)}
+  .contact .big{font-size:clamp(40px,10vw,150px)}
+  .contact .big a{display:inline-block;transition:color .3s}
+  .contact .big a:hover{color:var(--accent)}
+  .contact-sub{color:var(--muted);max-width:50ch;margin:26px auto 0;font-size:16px}
+  .contact-links{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:34px}
+  .clink{border:1px solid var(--line);border-radius:999px;padding:11px 20px;font-size:13px;
+    font-family:var(--mono);transition:.25s;display:inline-flex;gap:8px;align-items:center}
+  .clink:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-2px)}
+  button.clink{cursor:pointer}
+  .mailbtn{font:inherit;color:inherit;background:none;border:none;cursor:pointer;padding:0;display:inline;transition:color .3s}
+  .mailbtn:hover{color:var(--accent)}
+  .email-line{font-family:var(--mono);font-size:14px;color:var(--muted);margin-top:22px;user-select:all}
+
+  /* contact form */
+  .cform{max-width:580px;margin:clamp(34px,5vw,52px) auto 0;text-align:left;display:flex;flex-direction:column;gap:18px}
+  .form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  @media(max-width:560px){.form-row{grid-template-columns:1fr}}
+  .fg{display:flex;flex-direction:column;gap:8px}
+  .fg label{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+  .fg input,.fg textarea{background:var(--surface);border:1px solid var(--line);border-radius:10px;
+    padding:13px 15px;color:var(--fg);font-family:var(--sans);font-size:15px;width:100%;transition:border-color .2s;min-width:0}
+  .fg input::placeholder,.fg textarea::placeholder{color:color-mix(in srgb,var(--muted) 75%,transparent)}
+  .fg input:focus,.fg textarea:focus{outline:none;border-color:var(--accent)}
+  .fg textarea{resize:vertical;min-height:130px}
+  .form-submit{align-self:flex-start;background:var(--accent);color:var(--bg);border:none;border-radius:10px;
+    padding:14px 28px;font-family:var(--sans);font-weight:500;font-size:15px;cursor:pointer;display:inline-flex;
+    align-items:center;gap:9px;transition:transform .2s,opacity .2s}
+  .form-submit svg{width:16px;height:16px}
+  .form-submit:hover{transform:translateY(-2px)}
+  .form-submit[disabled]{opacity:.6;cursor:default;transform:none}
+  .form-note{font-family:var(--mono);font-size:12.5px;line-height:1.5;margin-top:2px;min-height:1em}
+  .form-note.ok{color:var(--accent)}
+  .form-note.err{color:#E5736B}
+  .toast{position:fixed;left:50%;bottom:28px;transform:translate(-50%,20px);z-index:500;background:var(--fg);
+    color:var(--bg);padding:11px 18px;border-radius:999px;font-family:var(--mono);font-size:12px;opacity:0;
+    pointer-events:none;transition:opacity .3s,transform .3s}
+  .toast.show{opacity:1;transform:translate(-50%,0)}
+
+  footer{border-top:1px solid var(--line);padding-block:28px}
+  footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;
+    font-family:var(--mono);font-size:12px;color:var(--muted)}
+
+  /* ===== CASE STUDY ===== */
+  .case-hero{padding-block:clamp(120px,16vh,180px) clamp(30px,5vw,50px)}
+  .back{font-family:var(--mono);font-size:12px;color:var(--muted);display:inline-flex;align-items:center;
+    gap:8px;margin-bottom:40px;transition:gap .25s,color .25s}
+  .back:hover{color:var(--accent);gap:12px}
+  .case-hero .eyebrow{margin-bottom:22px}
+  .case-hero h1{font-family:var(--display);font-weight:800;font-size:clamp(40px,8.5vw,120px);
+    line-height:0.88;text-transform:uppercase;letter-spacing:-0.02em;margin-bottom:26px}
+  .case-hero .summary{font-size:clamp(17px,2.2vw,23px);max-width:54ch;line-height:1.4;color:var(--muted)}
+  .meta{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);
+    border:1px solid var(--line);border-radius:12px;overflow:hidden;margin-top:clamp(36px,5vw,56px)}
+  .meta div{background:var(--bg);padding:18px}
+  .meta .k{font-family:var(--mono);font-size:10px;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);margin-bottom:7px}
+  .meta .v{font-size:14px;line-height:1.35}
+  @media(max-width:620px){.meta{grid-template-columns:repeat(2,1fr)}}
+
+  .chapter{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,5vw,72px);
+    border-top:1px solid var(--line);padding-block:clamp(48px,8vw,100px)}
+  .chapter.rev .ch-aside{order:-1}
+  @media(max-width:860px){.chapter,.chapter.rev{grid-template-columns:1fr;gap:26px}.chapter.rev .ch-aside{order:0}}
+  .ch-aside{position:sticky;top:110px;align-self:start}
+  @media(max-width:860px){.ch-aside{position:static}}
+  .ch-num{font-family:var(--display);font-weight:800;font-size:clamp(64px,11vw,150px);line-height:.78;
+    color:var(--line);-webkit-text-stroke:0;transition:color .6s}
+  .chapter.active .ch-num{color:var(--accent)}
+  .ch-label{font-family:var(--mono);font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);margin-top:18px}
+  .ch-body h3{font-family:var(--display);font-weight:700;font-size:clamp(24px,3.4vw,38px);line-height:1.05;
+    text-transform:uppercase;letter-spacing:-0.01em;margin-bottom:20px}
+  .ch-body p{font-size:clamp(16px,1.8vw,18px);color:var(--muted)}
+  .ch-body p strong,.ch-body p b{color:var(--fg);font-weight:500}
+  .ch-body p+p{margin-top:16px}
+  .ch-body ul{margin:18px 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:15px}
+  .ch-body li{padding-left:26px;position:relative;font-size:16px;line-height:1.55;color:var(--muted)}
+  .ch-body li b{color:var(--fg);font-weight:500}
+  .ch-body li::before{content:"";position:absolute;left:0;top:9px;width:9px;height:9px;background:var(--accent);border-radius:50%}
+  .fill{background:var(--accent-soft);border-left:2px solid var(--accent);padding:3px 8px;border-radius:0 4px 4px 0;
+    font-family:var(--mono);font-size:.82em;color:var(--accent)}
+
+  .slot{border:1.5px dashed color-mix(in srgb,var(--muted) 40%,transparent);border-radius:14px;background:var(--surface);
+    padding:clamp(24px,4vw,44px) 22px;display:flex;flex-direction:column;align-items:center;justify-content:center;
+    text-align:center;gap:11px;min-height:240px;margin-top:22px;transition:border-color .5s}
+  .chapter.active .slot{border-color:color-mix(in srgb,var(--accent) 50%,transparent)}
+  .slot .ico{width:32px;height:32px;color:var(--accent);opacity:.8}
+  .slot .st{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent)}
+  .slot .sd{font-size:14px;max-width:42ch;color:var(--fg)}
+  .slot .scap{font-size:12.5px;color:var(--muted);max-width:48ch;font-style:italic}
+  .shot{border-radius:14px;overflow:hidden;border:1px solid var(--line);background:var(--surface);margin-top:22px}
+  .shot img{width:100%;height:auto;display:block}
+  .shot figcaption{font-size:12.5px;color:var(--muted);padding:12px 16px;line-height:1.5;border-top:1px solid var(--line)}
+  .gallery-wrap{border-top:1px solid var(--line);padding-block:clamp(40px,6vw,72px)}
+  .gallery-head{font-family:var(--mono);font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:var(--accent);margin-bottom:24px}
+  .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+  .gallery figure{margin:0;border-radius:14px;overflow:hidden;border:1px solid var(--line);background:var(--surface)}
+  .gallery figure img{width:100%;height:auto;display:block}
+
+  .ch-plain{border-top:1px solid var(--line);padding-block:clamp(44px,7vw,80px)}
+  .ch-plain .inner{max-width:var(--col)}
+  .ch-plain .ch-label{margin-bottom:18px}
+  .ch-plain h3{font-family:var(--display);font-weight:700;font-size:clamp(24px,3.4vw,38px);text-transform:uppercase;
+    line-height:1.05;margin-bottom:18px}
+  .ch-plain p{font-size:clamp(16px,1.8vw,18px);color:var(--muted)}
+  .ch-plain ul{margin:18px 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:14px}
+  .ch-plain li{padding-left:26px;position:relative;font-size:16px;color:var(--muted);line-height:1.55}
+  .ch-plain li::before{content:"";position:absolute;left:0;top:9px;width:9px;height:9px;background:var(--accent);border-radius:50%}
+
+  .case-nav{display:flex;justify-content:space-between;gap:16px;border-top:1px solid var(--line);padding-block:40px;flex-wrap:wrap}
+  .case-nav a{font-family:var(--mono);font-size:13px;color:var(--muted);display:inline-flex;gap:8px;align-items:center;transition:.25s}
+  .case-nav a:hover{color:var(--accent)}
+
+  /* reveal */
+  html.js .rv{opacity:0;transform:translateY(40px)}
+  html.js .rv.in{opacity:1;transform:none;transition:opacity 1s cubic-bezier(.16,1,.3,1),transform 1s cubic-bezier(.16,1,.3,1)}
+
+  @media(prefers-reduced-motion:reduce){
+    *,*::before,*::after{animation:none!important;transition:none!important}
+    html.js .rv{opacity:1;transform:none}
+    .hero h1 .ln > span{transform:none!important}
+    .loader{display:none!important}
+  }
+</style>
+
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to main content</a>
+<a class="skip" href="#main">Skip to content</a>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><symbol id="ihlogo" viewBox="0 0 93 18">
+<path d="M59.3393 18C58.3701 18 57.4883 17.8464 56.6939 17.5391C55.9154 17.2156 55.2481 16.7547 54.6921 16.1563C54.1519 15.558 53.7308 14.8544 53.429 14.0458C53.143 13.221 53 12.3154 53 11.3288C53 10.0674 53.2463 8.96766 53.7388 8.02965C54.2472 7.09164 54.9463 6.36388 55.836 5.84636C56.7257 5.31267 57.7425 5.04582 58.8865 5.04582C59.4584 5.04582 59.9986 5.13477 60.5071 5.31267C61.0155 5.49057 61.4762 5.74124 61.8893 6.06469C62.3024 6.38814 62.636 6.76819 62.8902 7.20485H62.9141V0H65.6547V11.3774C65.6547 12.7358 65.3846 13.9164 64.8445 14.9191C64.3202 15.9057 63.5814 16.6658 62.6281 17.1995C61.6907 17.7332 60.5944 18 59.3393 18ZM59.3393 15.6226C60.0384 15.6226 60.65 15.4528 61.1743 15.1132C61.7145 14.7574 62.1356 14.2722 62.4374 13.6577C62.7393 13.0431 62.8902 12.3315 62.8902 11.5229C62.8902 10.7143 62.7393 10.0027 62.4374 9.38814C62.1356 8.77358 61.7145 8.2965 61.1743 7.95687C60.65 7.60108 60.0304 7.42318 59.3155 7.42318C58.6323 7.42318 58.0206 7.60108 57.4804 7.95687C56.9402 8.31267 56.5192 8.79784 56.2173 9.4124C55.9154 10.027 55.7645 10.7305 55.7645 11.5229C55.7645 12.3315 55.9154 13.0431 56.2173 13.6577C56.5192 14.2722 56.9402 14.7574 57.4804 15.1132C58.0365 15.4528 58.6561 15.6226 59.3393 15.6226Z" fill="currentColor"/>
+<path d="M68.7467 17.7089V8.85445C68.7467 7.75472 69.0486 6.89757 69.6524 6.28302C70.272 5.65229 71.122 5.33693 72.2024 5.33693H75.1337V7.71429H72.7028C72.3215 7.71429 72.0197 7.82749 71.7972 8.05391C71.5907 8.28032 71.4874 8.5876 71.4874 8.97574V17.7089H68.7467Z" fill="currentColor"/>
+<path d="M77.0343 17.7089V5.33693H79.775V17.7089H77.0343Z" fill="currentColor"/>
+<path d="M83.0144 17.7089V15.3315H88.8771C89.1631 15.3315 89.4093 15.2668 89.6159 15.1375C89.8383 15.0081 90.0051 14.8383 90.1163 14.628C90.2434 14.4178 90.307 14.1995 90.307 13.973C90.307 13.7143 90.2514 13.4879 90.1402 13.2938C90.029 13.0997 89.8701 12.9461 89.6635 12.8329C89.457 12.7035 89.2187 12.6388 88.9486 12.6388H86.5654C85.7869 12.6388 85.0957 12.5094 84.492 12.2507C83.8883 11.9919 83.4116 11.5957 83.0621 11.062C82.7126 10.5121 82.5378 9.8248 82.5378 9C82.5378 8.33693 82.6967 7.73046 83.0144 7.18059C83.3481 6.63073 83.7929 6.18598 84.349 5.84636C84.9051 5.50674 85.5327 5.33693 86.2317 5.33693H91.8799V7.71429H86.4939C86.1285 7.71429 85.8266 7.83558 85.5883 8.07817C85.35 8.30458 85.2308 8.5876 85.2308 8.92722C85.2308 9.25067 85.35 9.53369 85.5883 9.77628C85.8266 10.0189 86.1443 10.1402 86.5415 10.1402H88.8532C89.7271 10.1402 90.4738 10.2776 91.0934 10.5526C91.7131 10.8275 92.1818 11.2399 92.4995 11.7898C92.8332 12.3396 93 13.035 93 13.876C93 14.5553 92.8332 15.1941 92.4995 15.7925C92.1659 16.3747 91.7051 16.8437 91.1173 17.1995C90.5453 17.5391 89.8939 17.7089 89.1631 17.7089H83.0144Z" fill="currentColor"/>
+<path d="M77 3.38887C77 2.58622 77.6716 1.93555 78.5 1.93555C79.3284 1.93555 80 2.58622 80 3.38887C80 4.19152 79.3284 3.87331 78.5 3.87331C77.6716 3.87331 77 4.19152 77 3.38887Z" fill="#34D399"/>
+<path d="M19.2216 13.0525H9.38516C9.40059 14.3766 8.94155 15.5322 8.00805 16.5193C7.08226 17.5064 5.97904 18 4.69836 18C3.45627 18 2.3839 17.6349 1.48126 16.9046C0.493753 16.1101 0 15.0909 0 13.8469C0 12.282 0.48218 11.303 1.44654 10.9097C1.5314 11.5838 1.61627 12.258 1.70113 12.9321C1.84 13.7025 2.06373 14.2803 2.37233 14.6655C2.7735 15.1551 3.35983 15.3998 4.13132 15.3998C4.81795 15.3998 5.40042 15.1872 5.87874 14.7618C6.35707 14.3445 6.59623 13.6624 6.59623 12.7154C6.59623 12.4666 6.57694 12.0934 6.53836 11.5959C6.49979 11.0903 6.4805 10.7171 6.4805 10.4764C6.4805 9.90656 6.56151 9.44913 6.72352 9.10404C6.93182 8.6787 7.32528 8.30954 7.9039 7.99656C8.40537 7.77185 8.90683 7.54314 9.4083 7.3104V10.1634H11.1557C11.1557 9.87446 11.1519 9.54142 11.1442 9.16423C11.1364 8.78705 11.1326 8.54228 11.1326 8.42992C11.1326 7.83606 11.2637 7.43078 11.526 7.2141C11.6109 7.1499 12.2705 6.79679 13.5049 6.15477V10.1634H15.2176V7.33448C15.2176 6.76469 15.3989 6.3875 15.7615 6.20292L17.5552 5.26397C17.5552 5.26397 17.5552 8.25004 17.5552 10.1634H19.2216V13.0525Z" fill="currentColor"/>
+<path d="M27.033 11.8246C27.033 12.1215 26.8902 12.4024 26.6048 12.6672C26.327 12.924 26.0455 13.0525 25.76 13.0525H17.5552C17.5552 13.0525 17.5552 11.2916 17.5552 10.1634H24.6606C24.6606 8.63055 24.7455 7.70765 24.9152 7.39467C25.0695 7.11379 25.7754 6.53597 27.033 5.66122V11.8246Z" fill="currentColor"/>
+<path d="M34.1499 14.4609C34.1499 15.2795 33.8915 15.9375 33.3746 16.4351C32.8654 16.9407 32.2096 17.1935 31.4073 17.1935C30.5818 17.1935 29.8836 16.9447 29.3127 16.4471C28.7495 15.9576 28.4293 15.2955 28.3522 14.4609H31.4073V10.2717C31.4073 9.38894 31.658 8.74291 32.1595 8.33362C32.2289 8.26942 32.8924 7.9123 34.1499 7.26225V14.4609Z" fill="currentColor"/>
+<path d="M46 11.8246C46 12.1697 45.892 12.4626 45.676 12.7034C45.4677 12.9361 45.1977 13.0525 44.8659 13.0525H36.6148V10.1634H43.6277V8.63457C43.6277 8.40986 43.512 8.20522 43.2805 8.02064C43.0568 7.82803 42.833 7.73173 42.6093 7.73173H37.9457V4C38.1231 4.32101 38.3854 4.6059 38.7326 4.85469C39.1106 5.12754 39.4616 5.26397 39.7857 5.26397H43.6277C44.322 5.26397 44.8891 5.49269 45.3288 5.95013C45.7763 6.40757 46 6.96532 46 7.62339V11.8246Z" fill="currentColor"/>
+<path d="M26 14.7364C26 15.3006 25.3824 15.67 24.8598 15.4573C24.2824 15.2223 23.5823 15 23 15C22.4177 15 21.7176 15.2223 21.1402 15.4573C20.6176 15.67 20 15.3006 20 14.7364C20 14.3297 20.3297 14 20.7364 14L25.2636 14C25.6703 14 26 14.3297 26 14.7364Z" fill="#34D399"/>
+<path d="M48.2297 17.2683C48.1882 17.1711 48.1674 17.0606 48.1674 16.9366C48.1674 16.7415 48.2173 16.5724 48.3172 16.4293C48.4229 16.2927 48.5551 16.1854 48.7137 16.1073C48.8781 16.0358 49.0573 16 49.2511 16C49.3627 16 49.4743 16.013 49.5859 16.039C49.6975 16.065 49.8032 16.1073 49.9031 16.1659L49.6564 16.761C49.6035 16.748 49.5448 16.7382 49.4802 16.7317C49.4156 16.7252 49.3568 16.722 49.304 16.722C49.1278 16.722 48.9897 16.748 48.8899 16.8C48.79 16.8585 48.7401 16.9236 48.7401 16.9951C48.7401 17.0602 48.79 17.122 48.8899 17.1805C48.9897 17.239 49.1278 17.2683 49.304 17.2683H50V18H48V17.2683L48.2297 17.2683Z" fill="#34D399"/>
+<circle cx="50" cy="1" r="1" fill="#34D399"/>
+<path d="M49.1436 4.07209C49.0667 3.51086 49.4997 3 50.0662 3C50.556 3 50.9577 3.38576 50.9702 3.87545C50.999 5.00462 51.0298 7.01212 50.9432 8.6C50.8524 10.2667 50.5599 12.8004 50.3985 14.1245C50.3374 14.6261 49.911 15 49.4056 15C48.7162 15 48.2258 14.3217 48.4237 13.6614C48.8502 12.2389 49.4485 10.0053 49.4716 8.6C49.4981 6.994 49.2964 5.18808 49.1436 4.07209Z" fill="#34D399"/>
+</symbol></svg>
+<div class="grain" aria-hidden="true"></div>
+<div class="cursor" aria-hidden="true"></div>
+<div class="cursor-ring" aria-hidden="true"></div>
+<div class="progress" id="progress" aria-hidden="true"></div>
+<div class="pt" id="pt" aria-hidden="true"></div>
+<div class="peek" id="peek" aria-hidden="true"><span class="pk-label"></span></div>
+<div class="toast" id="toast" role="status" aria-live="polite">Email copied to clipboard</div>
 
-  <!-- NAV -->
-  <nav id="mainNav">
-    <a href="index.html" class="nav-logo">
-      <img src="IDRIS LOGO.png" alt="Idris Hedhibi" width="80" height="24">
-    </a>
-    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
-    <ul class="nav-links" id="navLinks" role="list">
-      <li><a href="#work">Work</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#process">Process</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
+<div class="loader" id="loader" aria-hidden="true">
+  <div class="loader-word"><span><svg class="logo" aria-hidden="true" focusable="false"><use href="#ihlogo"/></svg></span></div>
+  <div class="loader-bar" id="loaderBar"></div>
+  <div class="loader-pct" id="loaderPct">0%</div>
+</div>
 
-  <main id="main">
-
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-grid-bg"></div>
-    <div class="hero-glow"></div>
-    <div class="hero-left">
-      <p class="hero-tag">Designing scalable platforms &amp; design systems across MENA</p>
-      <h1 class="hero-name">
-        IDRIS<br>
-        <span class="green">HEDHIBI</span><span class="underscore">_</span>
-      </h1>
-      <p class="hero-roles">Specialised in <span class="rotator" id="heroRotator" aria-live="polite"><span class="rotator-word">Design Systems</span></span></p>
-      <p class="hero-desc">Senior Product Designer in AI, Enterprise & Government Platforms with 6+ years shaping national-scale government platforms across the MENA region. I turn complex policy into intuitive, accessible, bilingual digital experiences.</p>
-      <div class="hero-cta">
-        <a href="#work" class="btn-primary">View Work</a>
-        <a href="#contact" class="btn-ghost">Let's talk →</a>
-      </div>
-    </div>
-    <div class="hero-right">
-      <div class="hero-image-wrap">
-        <img src="hero-photo.png" alt="Idris Hedhibi" class="hero-photo">
-        <div class="hero-counter">
-          <span class="hero-counter-num">6+</span>
-          <span class="hero-counter-label">Years Experience</span>
-        </div>
-      </div>
-    </div>
-    <div class="hero-scroll-hint" aria-hidden="true">
-      <div class="scroll-line"></div>
-      <span>Scroll</span>
-    </div>
-  </section>
-
-  <!-- MARQUEE -->
-  <div class="marquee-section" aria-hidden="true">
-    <div class="marquee-track">
-      <div class="marquee-item">
-        <span>Design Systems</span><span class="marquee-dot"></span>
-        <span>Government Platforms</span><span class="marquee-dot"></span>
-        <span>Complex Workflows</span><span class="marquee-dot"></span>
-        <span>Usability Testing</span><span class="marquee-dot"></span>
-        <span>Accessibility</span><span class="marquee-dot"></span>
-        <span>AI-Driven UX</span><span class="marquee-dot"></span>
-        <span>Bilingual Experiences</span><span class="marquee-dot"></span>
-        <span>Product Strategy</span><span class="marquee-dot"></span>
-      </div>
-      <div class="marquee-item" aria-hidden="true">
-        <span>Design Systems</span><span class="marquee-dot"></span>
-        <span>Government Platforms</span><span class="marquee-dot"></span>
-        <span>Complex Workflows</span><span class="marquee-dot"></span>
-        <span>Usability Testing</span><span class="marquee-dot"></span>
-        <span>Accessibility</span><span class="marquee-dot"></span>
-        <span>AI-Driven UX</span><span class="marquee-dot"></span>
-        <span>Bilingual Experiences</span><span class="marquee-dot"></span>
-        <span>Product Strategy</span><span class="marquee-dot"></span>
-      </div>
-    </div>
+<header class="bar" id="bar">
+  <div class="wrap">
+    <a class="brand" href="#home" data-link aria-label="Idris Hedhibi — home"><svg class="logo" aria-hidden="true" focusable="false"><use href="#ihlogo"/></svg></a>
+    <nav class="main" aria-label="Primary">
+      <a href="#home" data-link data-cursor>Work</a>
+      <a href="#about" data-link data-cursor>About</a>
+      <a href="#experience" data-link data-cursor>Experience</a>
+      <a href="#contact" data-link data-cursor>Contact</a>
+      <button class="toggle" id="themeBtn" type="button" aria-label="Switch colour theme" data-cursor>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      </button>
+    </nav>
   </div>
+</header>
 
-  <!-- RECOGNITION STRIP -->
-  <div class="recognition-strip" aria-label="International recognition">
-    <div class="recognition-strip-item reveal">
-      <span class="recognition-strip-icon"><i class="ph-fill ph-seal-check"></i></span>
-      <div>
-        <p class="recognition-strip-org">Council of Arab Health Ministers</p>
-        <p class="recognition-strip-title">Evax — Pan-Arab Reference Model</p>
-        <p class="recognition-strip-year">December 2025 · Tripoli, Libya</p>
+<main id="main">
+
+  <!-- ===== HOME ===== -->
+  <section id="view-home" class="view" aria-labelledby="home-h1">
+    <div class="wrap hero">
+      <div class="hero-left">
+        <div class="hero-top">
+          <span class="eyebrow">Senior Product Designer — national-scale government &amp; AI platforms across the Gulf.</span>
+          <span class="eyebrow">Available 2026 · Doha, QA</span>
+        </div>
+        <h1 id="home-h1" tabindex="-1" aria-label="Idris Hedhibi">
+          <span class="ln"><span>Idris</span></span>
+          <span class="ln"><span>Hedhibi</span></span>
+        </h1>
+        <p class="hero-lede">Bilingual (AR/EN, RTL) design systems, WCAG&nbsp;2.2&nbsp;AA accessibility, and AI products. <span class="mut">6+ years across Qatar, Saudi Arabia &amp; Tunisia — with partners like Microsoft and UN&nbsp;ESCWA.</span></p>
+        <span class="scrollcue">Scroll <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"/></svg></span>
+      </div>
+
+      <div class="portrait-wrap">
+        <div class="illu" aria-hidden="true">
+          <svg viewBox="0 0 100 100">
+            <circle class="ring d1" cx="50" cy="50" r="49"/>
+            <circle class="ring d2" cx="50" cy="50" r="43.5"/>
+            <g class="orbit o1"><circle class="orb" cx="50" cy="1" r="2.3"/></g>
+            <g class="orbit o2"><circle class="orb" cx="99" cy="50" r="1.7"/></g>
+          </svg>
+        </div>
+        <div class="portrait">
+          <img src="portrait.png" alt="Idris Hedhibi, Senior Product Designer">
+        </div>
+        <div class="floaty f1" aria-hidden="true"><span class="b"></span>Designer</div>
+        <div class="floaty f2" aria-hidden="true"><span class="b"></span>Consultant</div>
       </div>
     </div>
-    <div class="recognition-strip-item reveal reveal-delay-1">
-      <span class="recognition-strip-icon"><i class="ph-fill ph-buildings"></i></span>
-      <div>
-        <p class="recognition-strip-org">UN ESCWA + Microsoft</p>
-        <p class="recognition-strip-title">LMIS &amp; MOL360 — AI Labour Market System</p>
-        <p class="recognition-strip-year">November 2024 / December 2025 · Qatar</p>
+
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>Design Systems</span><span>Accessibility</span><span>Bilingual · RTL</span><span>AI Platforms</span><span>Government UX</span>
+        <span>Design Systems</span><span>Accessibility</span><span>Bilingual · RTL</span><span>AI Platforms</span><span>Government UX</span>
       </div>
     </div>
-    <div class="recognition-strip-item reveal reveal-delay-2">
-      <span class="recognition-strip-icon"><i class="ph-fill ph-medal"></i></span>
-      <div>
-        <p class="recognition-strip-org">DGA Digital Inclusion Program</p>
-        <p class="recognition-strip-title">National Accessibility Standards — Saudi Arabia</p>
-        <p class="recognition-strip-year">2023 · PwC Middle East · WCAG 2.1</p>
+
+    <div class="wrap">
+      <div class="works-head">
+        <div class="rv">
+          <svg class="sec-illu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 2l9 5-9 5-9-5 9-5zM3 12l9 5 9-5M3 17l9 5 9-5"/></svg>
+          <h2>Selected Work</h2>
+        </div>
+        <span class="eyebrow rv">04 — Projects / 2022–2026</span>
+      </div>
+      <div class="works">
+        <a class="work-row rv" href="#dga" data-link data-peek="Accessibility · Saudi Arabia">
+          <div class="row-inner"><span class="rn">01</span><div class="rt"><h3>DGA Accessibility</h3>
+            <div class="rmeta"><span>PwC Middle East</span><span>UX Research</span><span>WCAG 2.2</span><span>2023</span></div></div>
+            <span class="rarrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M7 17L17 7M9 7h8v8"/></svg></span></div>
+        </a>
+        <a class="work-row rv" href="#lmis" data-link data-peek="AI Labour Intelligence · Qatar">
+          <div class="row-inner"><span class="rn">02</span><div class="rt"><h3>LMIS &amp; MOL360</h3>
+            <div class="rmeta"><span>Ministry of Labour</span><span>UN ESCWA · Microsoft</span><span>AI Platform</span><span>2024</span></div></div>
+            <span class="rarrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M7 17L17 7M9 7h8v8"/></svg></span></div>
+        </a>
+        <a class="work-row rv" href="#design-system" data-link data-peek="Bilingual AR/EN System · Qatar">
+          <div class="row-inner"><span class="rn">03</span><div class="rt"><h3>Design System</h3>
+            <div class="rmeta"><span>Ministry of Labour</span><span>50+ Components</span><span>RTL · Tokens</span><span>2024–26</span></div></div>
+            <span class="rarrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M7 17L17 7M9 7h8v8"/></svg></span></div>
+        </a>
+        <a class="work-row rv" href="#evax" data-link data-peek="National Vaccination Platform · Tunisia">
+          <div class="row-inner"><span class="rn">04</span><div class="rt"><h3>Evax</h3>
+            <div class="rmeta"><span>EY Tunisia</span><span>8M+ Citizens</span><span>E-Health</span><span>2022</span></div></div>
+            <span class="rarrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M7 17L17 7M9 7h8v8"/></svg></span></div>
+        </a>
       </div>
     </div>
-  </div>
 
-  <!-- STATS BAR -->
-  <div class="stats-bar">
-    <div class="stat reveal"><span class="stat-num">16+</span><span class="stat-label">Platforms Designed</span></div>
-    <div class="stat reveal reveal-delay-1"><span class="stat-num">8M+</span><span class="stat-label">Citizens Served (Evax)</span></div>
-    <div class="stat reveal reveal-delay-2"><span class="stat-num">50+</span><span class="stat-label">Design System Components</span></div>
-    <div class="stat reveal reveal-delay-3"><span class="stat-num">3</span><span class="stat-label">Countries · QA · SA · TN</span></div>
-  </div>
-
-  <!-- WORK -->
-  <section class="work" id="work">
-    <div class="work-header reveal">
-      <div>
-        <p class="section-label">Selected Work</p>
-        <h2 class="section-title">Case <em>Studies</em></h2>
+    <div class="wrap sec" id="about-anchor">
+      <svg class="sec-illu rv" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="9" cy="12" r="6.5"/><circle cx="15" cy="12" r="6.5"/></svg>
+      <div class="sec-tag rv">( About )</div>
+      <h2 class="big rv">Design, business<br>&amp; policy.</h2>
+      <div class="about-grid">
+        <div class="body rv">
+          <p>I'm a Senior Product Designer with 6+ years designing national-scale digital products for government, banking and public-health institutions across Qatar, Saudi Arabia and Tunisia.</p>
+          <p>I lead end-to-end — from discovery research and UX through high-fidelity UI — and support delivery into production with front-end skills in HTML5, CSS3, Tailwind and Bootstrap. I specialise in the parts most teams find hardest: bilingual Arabic/English systems with true RTL, accessibility that survives real testing, and AI-powered interfaces where the interaction model is still being invented.</p>
+          <p>Most recently I led design across Qatar's Ministry of Labour — multiple national platforms, a scalable design system, and AI labour-market intelligence built directly with UN ESCWA and Microsoft.</p>
+        </div>
+        <div class="skillset rv">
+          <div class="signature skillgroup"><h4>Signature strengths</h4><p>Bilingual AR/EN &amp; RTL design systems · WCAG 2.2 AA accessibility · Government &amp; enterprise AI platforms</p></div>
+          <div class="skillgroup"><h4>UX &amp; Strategy</h4><p>Research · Journey mapping · Service blueprints · UX audits · Heuristic evaluation · Usability testing</p></div>
+          <div class="skillgroup"><h4>UI &amp; Systems</h4><p>Design systems · Interaction design · Bilingual typography · Data visualisation</p></div>
+          <div class="skillgroup"><h4>Front-end &amp; tools</h4><p>HTML5 · CSS3 · Tailwind · Bootstrap · Figma · Miro · Power BI</p></div>
+        </div>
       </div>
-      <p class="work-header-right">Click to read each<br>full case study.</p>
     </div>
 
-    <div class="projects-grid">
-
-      <!-- 01 LMIS -->
-      <a href="lmis.html" class="project-card reveal reveal-delay-1" aria-label="LMIS AI Labour Market Intelligence System">
-        <div class="project-bg"></div>
-        <img src="LMIS PROJECT.png" alt="LMIS AI Labour Market Intelligence" class="project-img">
-        <div class="project-arrow" aria-hidden="true"><i class="ph ph-arrow-up-right"></i></div>
-        <div class="project-content">
-          <p class="project-num">01 // Ministry of Labour · UN ESCWA · Microsoft</p>
-          <h3 class="project-title">LMIS &amp; MOL360<br>AI Labour Market Intelligence</h3>
-          <div class="project-tags">
-            <span class="project-tag">AI</span>
-            <span class="project-tag">Gov Platform</span>
-            <span class="project-tag">Data Viz</span>
-          </div>
-        </div>
-      </a>
-
-      <!-- 02 DGA -->
-      <a href="dga.html" class="project-card reveal reveal-delay-2" aria-label="DGA Digital Inclusivity">
-        <div class="project-bg"></div>
-        <img src="project3.png" alt="DGA Digital Inclusivity" class="project-img">
-        <div class="project-arrow" aria-hidden="true"><i class="ph ph-arrow-up-right"></i></div>
-        <div class="project-content">
-          <p class="project-num">02 // PwC Middle East · DGA Saudi Arabia</p>
-          <h3 class="project-title">DGA Accessibility<br>National Standards</h3>
-          <div class="project-tags">
-            <span class="project-tag">UX Research</span>
-            <span class="project-tag">Accessibility</span>
-            <span class="project-tag">WCAG</span>
-          </div>
-        </div>
-      </a>
-
-      <!-- 03 EVAX -->
-      <a href="evax.html" class="project-card reveal reveal-delay-1" aria-label="Evax National Vaccination Platform">
-        <div class="project-bg"></div>
-        <img src="evax project.png" alt="Evax National Vaccination Platform" class="project-img">
-        <div class="project-arrow" aria-hidden="true"><i class="ph ph-arrow-up-right"></i></div>
-        <div class="project-content">
-          <p class="project-num">03 // EY Tunisia · GIZ · Ministry of Health</p>
-          <h3 class="project-title">Evax Platform<br>8M+ Users · 13M Doses</h3>
-          <div class="project-tags">
-            <span class="project-tag">Product Design</span>
-            <span class="project-tag">E-Health</span>
-            <span class="project-tag">Design System</span>
-          </div>
-        </div>
-      </a>
-
-      <!-- 04 MOBILE ID -->
-      <a href="mobile-id.html" class="project-card reveal reveal-delay-2" aria-label="Mobile ID Digital Identity System">
-        <div class="project-bg"></div>
-        <img src="project2.png" alt="Mobile ID Digital Identity System" class="project-img">
-        <div class="project-arrow" aria-hidden="true"><i class="ph ph-arrow-up-right"></i></div>
-        <div class="project-content">
-          <p class="project-num">04 // EY Tunisia · GIZ · Ministry of ICT</p>
-          <h3 class="project-title">Mobile ID (e-Houwiya)<br>Digital Identity Backbone</h3>
-          <div class="project-tags">
-            <span class="project-tag">Service Design</span>
-            <span class="project-tag">UX/UI</span>
-            <span class="project-tag">E-Government</span>
-          </div>
-        </div>
-      </a>
-
-      <!-- 05 BICICI -->
-      <a href="bicici.html" class="project-card reveal reveal-delay-1" aria-label="BICICI Smart Data Workspace">
-        <div class="project-bg"></div>
-        <img src="bicici project.png" alt="BICICI Smart Data Workspace" class="project-img">
-        <div class="project-arrow" aria-hidden="true"><i class="ph ph-arrow-up-right"></i></div>
-        <div class="project-content">
-          <p class="project-num">05 // EY · BICICI BNP Paribas Bank</p>
-          <h3 class="project-title">Smart Data Workspace<br>AI Product Recommendations</h3>
-          <div class="project-tags">
-            <span class="project-tag">AI</span>
-            <span class="project-tag">FinTech</span>
-            <span class="project-tag">Data Tables</span>
-          </div>
-        </div>
-      </a>
-
-
-      <!-- 07 MOL DESIGN SYSTEM — featured full-width -->
-      <a href="mol-design-system.html" class="project-card reveal reveal-delay-2" aria-label="Ministry of Labour Design System">
-        <div class="project-bg"></div>
-        <img src="PROJECT1.png" alt="Ministry of Labour Design System" class="project-img">
-        <div class="project-arrow" aria-hidden="true"><i class="ph ph-arrow-up-right"></i></div>
-        <div class="project-content">
-          <p class="project-num">06 // Ministry of Labour · Qatar · 2025</p>
-          <h3 class="project-title">MoL Design System<br>50+ Components · 9+ Platforms Unified</h3>
-          <div class="project-tags">
-            <span class="project-tag">Design System</span>
-            <span class="project-tag">Accessibility</span>
-            <span class="project-tag">Bilingual AR/EN</span>
-          </div>
-        </div>
-      </a>
-
+    <div class="wrap sec exp-sec" id="experience-anchor">
+      <div class="sec-tag rv">( Experience )</div>
+      <h2 class="big rv">The full story<br>lives in my CV.</h2>
+      <p class="exp-sub rv">Six years of government &amp; enterprise design across Qatar, Saudi Arabia and Tunisia — every role, project and outcome, laid out in detail.</p>
+      <div class="resume-illu rv" aria-hidden="true">
+        <div class="rz-head"><span class="rz-ava"></span><div class="rz-htxt"><span></span><span></span></div></div>
+        <div class="rz-lines"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+        <span class="rz-tag">CV · 2026 · PDF</span>
+      </div>
+      <a class="btn-dl exp-dl rv" href="resume.pdf" target="_blank" rel="noopener" download data-cursor>Download CV <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M12 3v12M7 11l5 5 5-5M5 21h14"/></svg></a>
     </div>
-  </section>
 
-  <!-- MORE PROJECTS -->
-  <section class="more-projects">
-    <div class="more-projects-header reveal">
-      <h2 class="section-title">More <em>Projects</em></h2>
-    </div>
-    <div class="projects-list">
-      <div class="project-list-item reveal reveal-delay-1">
-        <div class="project-list-num">07</div>
-        <div>
-          <div class="project-list-title">Moawen — Domestic Worker Hiring Platform</div>
-          <div class="project-list-desc">A digital platform designed for the Ministry of Labour to streamline domestic worker recruitment and hiring in Qatar. Service design, UX/UI, and bilingual mobile interface.</div>
+    <div class="wrap contact" id="contact-anchor">
+      <svg class="sec-illu rv" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" style="margin-inline:auto"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+      <div class="sec-tag rv">( Contact )</div>
+      <h2 class="big rv">Let's<br><button type="button" class="mailbtn js-copy" data-cursor>work together</button></h2>
+      <p class="contact-sub rv">Open to senior and lead product-design roles, and government digital-transformation work across the Gulf and MENA.</p>
+
+      <form class="cform rv" id="cform" action="https://formspree.io/f/xvzlovzb" method="POST">
+        <div class="form-row">
+          <div class="fg"><label for="f-name">Name</label><input id="f-name" name="name" type="text" placeholder="Your name" required autocomplete="name"></div>
+          <div class="fg"><label for="f-email">Email</label><input id="f-email" name="email" type="email" placeholder="you@company.com" required autocomplete="email"></div>
         </div>
-        <div class="project-list-tag">Mobile · Qatar</div>
-      </div>
-      <div class="project-list-item reveal reveal-delay-1">
-        <div class="project-list-num">08</div>
-        <div>
-          <div class="project-list-title">OUQOUL — AI Hiring platform</div>
-          <div class="project-list-desc">A digital platform designed for the Ministry of Labour to enhance hiring process in Qatar. Service design, UX consulting, and bilingual mobile interface.</div>
-        </div>
-        <div class="project-list-tag">AI Platform · Qatar</div>
-      </div>
-      <div class="project-list-item reveal reveal-delay-2">
-        <div class="project-list-num">09</div>
-        <div>
-          <div class="project-list-title">ClickFreight — Freight &amp; Logistics Platform</div>
-          <div class="project-list-desc">A two-sided digital freight platform connecting shippers with carriers across Qatar and the Gulf region. Enables shipment booking, tracking, and fleet load management.</div>
-        </div>
-        <div class="project-list-tag">Logistics ERP · Qatar</div>
-      </div>
-      <div class="project-list-item reveal reveal-delay-1">
-        <div class="project-list-num">10</div>
-        <div>
-          <div class="project-list-title">SLM E-Commerce Platform</div>
-          <div class="project-list-desc">Premium home decoration e-commerce — flooring, wall finishes, and marble. Visually-driven product discovery and streamlined buying experience.</div>
-        </div>
-        <div class="project-list-tag">E-Commerce · UAE</div>
+        <div class="fg"><label for="f-subject">Subject</label><input id="f-subject" name="subject" type="text" placeholder="Project, collaboration, opportunity…"></div>
+        <div class="fg"><label for="f-message">Message</label><textarea id="f-message" name="message" placeholder="Tell me about the project, timeline, and what you're looking for…" required></textarea></div>
+        <button type="submit" class="form-submit" data-cursor>Send message <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg></button>
+        <p class="form-note" id="formNote" role="status" aria-live="polite"></p>
+      </form>
+
+      <p class="email-line rv" id="emailLine">idrishedhibi.ux@gmail.com</p>
+      <div class="contact-links rv">
+        <button type="button" class="clink js-copy" data-cursor>Copy email</button>
+        <a class="clink" href="https://linkedin.com/in/idris-hedhibi" target="_blank" rel="noopener" data-cursor>LinkedIn</a>
+        <a class="clink" href="https://www.behance.net/IDRISHEDHIBIUX" target="_blank" rel="noopener" data-cursor>Behance</a>
       </div>
     </div>
   </section>
 
-  <!-- ABOUT -->
-  <section class="about" id="about">
-    <div class="about-grid">
-      <div class="about-left reveal">
-        <p class="section-label">About Me</p>
-        <h2 class="section-title">Designing at<br><em>large scale</em></h2>
-        <p class="about-text">Senior Product Designer &amp; UX Consultant with 6+ years of experience designing digital products for government entities, banking institutions, and national health systems across Tunisia, Saudi Arabia, and Qatar. I specialize in UX research, accessibility, design systems, and AI-powered platforms.</p>
-        <p class="about-text">Currently driving UX at Qatar's Ministry of Labour — leading design across multiple national platforms, building scalable design systems, and working directly with UN ESCWA and Microsoft on AI-powered labour market intelligence. My work sits at the intersection of design, business, and policy.</p>
-        <div class="hero-cta" style="margin-top:28px;margin-bottom:28px;">
-          <a href="Idris_Hedhibi_RESUME-2026.pdf" target="_blank" class="btn-primary">
-  <i class="ph ph-download-simple"></i>
-  Open Resume (PDF)
-</a>
-        </div>
-        <div class="about-skills">
-          <span class="skill-tag">Figma</span>
-          <span class="skill-tag">Miro</span>
-          <span class="skill-tag">HTML5 / CSS3</span>
-          <span class="skill-tag">Tailwind</span>
-          <span class="skill-tag">Bootstrap</span>
-          <span class="skill-tag">Design Systems</span>
-          <span class="skill-tag">UX Research</span>
-          <span class="skill-tag">Service Design</span>
-          <span class="skill-tag">Accessibility / WCAG</span>
-          <span class="skill-tag">Power BI</span>
-          <span class="skill-tag">Prototyping</span>
-          <span class="skill-tag">A/B Testing</span>
-        </div>
+  <!-- ===== DGA ===== -->
+  <section id="view-dga" class="view" aria-labelledby="dga-h1" hidden>
+    <div class="wrap case-hero">
+      <a class="back" href="#home" data-link data-cursor><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>All work</a>
+      <span class="eyebrow">Accessibility · Government · PwC Middle East</span>
+      <h1 id="dga-h1" tabindex="-1">DGA Accessibility</h1>
+      <p class="summary">Making Saudi Arabia's most-used government platforms usable for everyone — then writing the national standard so they stay that way.</p>
+      <div class="meta">
+        <div><div class="k">Role</div><div class="v">Senior UX Consultant</div></div>
+        <div><div class="k">Client</div><div class="v">DGA · PwC Middle East</div></div>
+        <div><div class="k">Year</div><div class="v">2023</div></div>
+        <div><div class="k">Scope</div><div class="v">Research · Guidelines · UI</div></div>
       </div>
-      <div class="about-right reveal reveal-delay-2">
-        <div class="about-image-wrap">
-          <img src="gpt-image-2_Abstract_3D_visualization_of_a_scalable_design_system_interconnected_UI_componen-0.jpg" alt="Design system visualization" class="about-photo">
-          <div class="about-float-card">
-            <span class="float-card-num">40+</span>
-            <span class="float-card-label">Projects Delivered</span>
-          </div>
-        </div>
+    </div>
+    <div class="wrap">
+      <div class="chapter"><div class="ch-aside"><div class="ch-num">01</div><div class="ch-label">The problem</div></div>
+        <div class="ch-body"><h3>Platforms everyone must use — failing those who need them most</h3>
+          <p>Three platforms sit at the centre of daily life in Saudi Arabia: Tawakkalna, Sehatty and Absher — identity, health and core government services. Using them isn't optional. Yet for citizens who rely on screen readers, or elderly users with low vision, key journeys broke down.</p>
+          <p>One failure stood out across every platform: screen readers were announcing buttons as "images", so a visually impaired user couldn't tell what an interactive element did, or even that it was interactive. Form inputs went unlabelled, and error messages appeared in the wrong place in the reading order.</p>
+          <p>There was no national accessibility standard for designers and developers. My task: prove the gap with real users, then build the reference that would close it.</p></div>
       </div>
+      <div class="chapter rev"><div class="ch-aside"><div class="ch-num">02</div><div class="ch-label">Constraints</div></div>
+        <div class="ch-body"><h3>Designing a standard under real conditions</h3>
+          <ul><li><b>High-stakes, high-traffic.</b> Mandatory national services where a change touches millions.</li>
+          <li><b>Bilingual AR/EN with full RTL.</b> Accessibility had to hold in both reading directions.</li>
+          <li><b>No existing reference.</b> I was defining the national standard, not applying one.</li>
+          <li><b>A fixed 7-month engagement</b> (2023), with research, gap analysis and the guidelines authored in parallel.</li></ul></div>
+      </div>
+      <div class="chapter"><div class="ch-aside"><div class="ch-num">03</div><div class="ch-label">Research</div>
+          <figure class="shot"><img src="assets/dga-session.png" alt="Accessibility testing session with participants" loading="lazy"><figcaption>Inclusive testing with 21 participants — screen-reader walkthroughs and task-based usability sessions.</figcaption></figure></div>
+        <div class="ch-body"><h3>Testing with the people the system was failing</h3>
+          <p>I ran inclusive testing with <b>21 participants</b> — 13 with vision disabilities and 8 elderly citizens aged 75–90+ — using screen readers (VoiceOver) and task-based usability methods, benchmarked against WCAG 2.1 (A/AA/AAA).</p>
+          <p>Methods: moderated task testing, screen-reader walkthroughs, focus groups, and a mapped People-with-Disabilities (PoD) life journey — with CX consultants, PoD specialists and government stakeholders.</p></div>
+      </div>
+      <div class="chapter rev"><div class="ch-aside"><div class="ch-num">04</div><div class="ch-label">Findings → rules</div></div>
+        <div class="ch-body"><h3>Turning recurring failures into a standard</h3>
+          <p>The sessions surfaced the same fixable failures again and again. For each, I defined a rule teams could apply:</p>
+          <ul><li><b>Buttons read as "images"</b> → mandated semantic HTML and ARIA labelling so every control announces its role.</li>
+          <li><b>Unlabelled inputs &amp; misplaced errors</b> → form-design and error-handling standards, with errors tied to their field in reading order.</li>
+          <li><b>Low contrast &amp; small targets failing elderly users</b> → documented contrast ratios, minimum touch-target sizes and visible focus states.</li></ul></div>
+      </div>
+      <div class="chapter"><div class="ch-aside"><div class="ch-num">05</div><div class="ch-label">The decision</div></div>
+        <div class="ch-body"><h3>A guideline people would actually use</h3>
+          <p>I chose a focused, example-led guideline over an exhaustive WCAG checklist — fewer criteria, each paired with real AR/EN before-and-after examples — because a reference that sits unread protects no one.</p>
+          <p>I rejected the exhaustive-checklist approach even though it looked more complete: adoption, not completeness, was the goal.</p></div>
+      </div>
+      <div class="chapter rev"><div class="ch-aside"><div class="ch-num">06</div><div class="ch-label">Solution</div>
+          <figure class="shot"><img src="assets/dga-website.png" alt="The redesigned DGA website reference implementation" loading="lazy"><figcaption>The redesigned DGA website — accessible colour system, contrast-compliant typography and visible focus states.</figcaption></figure></div>
+        <div class="ch-body"><h3>The guidelines, and a reference build to prove them</h3>
+          <p>I authored the national Accessibility Guidelines — a single designer-and-developer reference aligned to the DGA WCAG 2.2 framework — and delivered a full UI redesign of the DGA website as the reference implementation: accessible colour system, contrast-compliant typography, visible focus states, and a documented component library.</p></div>
+      </div>
+    </div>
+    <div class="wrap gallery-wrap">
+      <div class="gallery-head rv">More from the project</div>
+      <div class="gallery">
+        <figure class="rv"><img src="assets/dga-cover.png" alt="DGA accessibility project overview" loading="lazy"></figure>
+        <figure class="rv"><img src="assets/dga-pdf.png" alt="The national accessibility guidelines document" loading="lazy"></figure>
+      </div>
+    </div>
+    <div class="wrap ch-plain"><div class="inner"><div class="ch-label">07 — Outcome</div>
+      <h3>A national reference, not a report on a shelf</h3>
+      <ul><li>Delivered Saudi Arabia's national accessibility guidelines — adopted as the designer/developer reference for the DGA.</li>
+      <li>The redesigned DGA site served as the reference implementation for WCAG-compliant government design.</li>
+      <li>The work fed the DGA's Digital Inclusion Program and supported Saudi Arabia's #1 ranking in MENA for e-government service maturity (ESCWA 2022/2023) and #3 globally in the World Bank's Digital Government Maturity Index.</li></ul></div></div>
+    <div class="wrap ch-plain"><div class="inner"><div class="ch-label">08 — Reflection</div>
+      <p>In government, a standard only matters if people use it. Designing the guidelines <em>for adoption</em> — bilingual, example-led, developer-ready — mattered as much as the research. It's where I learned to treat accessibility as a system, not a checklist.</p></div></div>
+    <div class="wrap case-nav">
+      <a href="#home" data-link data-cursor><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>All work</a>
+      <a href="#lmis" data-link data-cursor>Next — LMIS &amp; MOL360 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></a>
     </div>
   </section>
 
-  <!-- EXPERIENCE -->
-  <section class="experience" id="experience">
-    <div class="reveal">
-      <p class="section-label">Career</p>
-      <h2 class="section-title">Work <em>Experience</em></h2>
+  <!-- ===== LMIS ===== -->
+  <section id="view-lmis" class="view" aria-labelledby="lmis-h1" hidden>
+    <div class="wrap case-hero">
+      <a class="back" href="#home" data-link data-cursor><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>All work</a>
+      <span class="eyebrow">AI Platform · Government · Ministry of Labour</span>
+      <h1 id="lmis-h1" tabindex="-1">LMIS &amp; MOL360</h1>
+      <p class="summary">Designing the interface for how a country reads its own labour market — a connected ecosystem of AI-powered platforms, not a single dashboard.</p>
+      <div class="meta">
+        <div><div class="k">Role</div><div class="v">Senior Product Designer</div></div>
+        <div><div class="k">Client</div><div class="v">Ministry of Labour</div></div>
+        <div><div class="k">Partners</div><div class="v">UN ESCWA · Microsoft</div></div>
+        <div><div class="k">Year</div><div class="v">2024 — 2026</div></div>
+      </div>
     </div>
-    <div class="experience-list">
-
-      <div class="exp-item reveal">
-        <div>
-          <p class="exp-company">Ministry of Labour</p>
-          <div class="exp-meta">
-            <span class="exp-type">Contract</span>
-            <span class="exp-dot"></span>
-            <span class="exp-location">Doha, Qatar</span>
-          </div>
-          <p class="exp-period">Dec 2023 — Apr 2026</p>
-        </div>
-        <div>
-          <p class="exp-role">Senior Product Designer</p>
-          <ul class="exp-bullets">
-            <li>Led UX design across 2 large-scale national citizen platforms — Ouqoul and Moawen — serving Qatar's national citizen base with bilingual (AR/EN) WCAG-compliant interfaces.</li>
-            <li>Built a scalable design system (50+ components, variables, foundations) adopted by 2 MoL departments (7–8 devs) and 1 outsourced team, applied across 9+ internal projects.</li>
-            <li>Designed LMIS ecosystem — AI-powered labour market intelligence dashboard, 360 platform, and 7+ POC platforms — in direct collaboration with UN ESCWA and Microsoft.</li>
-            <li>Presented LMIS at the National Workforce Strategy 2024–2030 launch ceremony under PM patronage (November 2024).</li>
-            <li>Delivered front-end support using HTML5, CSS3, Bootstrap, and Power BI to bridge design to production.</li>
-          </ul>
-          <div style="display:flex;gap:8px;flex-wrap:wrap;">
-            <a href="lmis.html" class="exp-cs-link"><i class="ph ph-arrow-up-right"></i> LMIS Case Study</a>
-            <a href="mol-design-system.html" class="exp-cs-link"><i class="ph ph-arrow-up-right"></i> Design System</a>
-          </div>
-        </div>
+    <div class="wrap">
+      <div class="chapter"><div class="ch-aside"><div class="ch-num">01</div><div class="ch-label">The problem</div></div>
+        <div class="ch-body"><h3>Decisions worth billions, made without a clear view of the data</h3>
+          <p>Qatar's Ministry of Labour needed a real-time, evidence-based view of its workforce to set national policy. The data existed, but scattered, unvalidated and unreadable for the officials who had to act on it.</p>
+          <p>My brief wasn't one screen. It was to design how an entire ecosystem would collect, validate, structure and surface labour data at a scale the country hadn't had before — and how AI forecasting would sit on top.</p></div>
       </div>
-
-      <div class="exp-item reveal reveal-delay-1">
-        <div>
-          <p class="exp-company">PwC Middle East</p>
-          <div class="exp-meta">
-            <span class="exp-type">Subcontractor · Brainlake</span>
-            <span class="exp-dot"></span>
-            <span class="exp-location">Riyadh, Saudi Arabia</span>
-          </div>
-          <p class="exp-period">Jan 2023 — Oct 2023</p>
-        </div>
-        <div>
-          <p class="exp-role">Senior UX Consultant</p>
-          <ul class="exp-bullets">
-            <li>Conducted inclusive UX research for DGA — accessibility testing across Tawakkalna, Sehatty, and Absher with 21 participants (13 vision disabilities + 8 elderly 75–90+).</li>
-            <li>Produced comprehensive Accessibility Guidelines document (designer &amp; developer reference) and delivered full UX/UI redesign of the DGA website.</li>
-            <li>Mapped the PoD life journey through surveys, focus groups, and usability testing — partnering with CX consultants, PoD specialists, and government stakeholders.</li>
-          </ul>
-          <a href="dga.html" class="exp-cs-link"><i class="ph ph-arrow-up-right"></i> DGA Case Study</a>
-        </div>
+      <div class="chapter rev"><div class="ch-aside"><div class="ch-num">02</div><div class="ch-label">Constraints</div></div>
+        <div class="ch-body"><h3>What shaped the design</h3>
+          <ul><li><b>Ministerial users, not analysts.</b> Officials needed insight at a glance, not raw tables.</li>
+          <li><b>Unproven data sources.</b> We couldn't commit to production before knowing which data was viable.</li>
+          <li><b>Bilingual AR/EN + Power BI.</b> Complex visualisation that had to work in both directions.</li>
+          <li><b>Dual accountability.</b> Aligned to Qatar National Vision 2030 and UN ESCWA / SDG reporting.</li></ul></div>
       </div>
-
-      <div class="exp-item reveal reveal-delay-2">
-        <div>
-          <p class="exp-company">EY Tunisia</p>
-          <div class="exp-meta">
-            <span class="exp-type">Full Time</span>
-            <span class="exp-dot"></span>
-            <span class="exp-location">Tunis, Tunisia</span>
-          </div>
-          <p class="exp-period">May 2022 — Jan 2023</p>
-        </div>
-        <div>
-          <p class="exp-role">Product Designer</p>
-          <ul class="exp-bullets">
-            <li>Designed Evax — Tunisia's national vaccination platform serving 8M users and 13M doses. Built two-portal architecture (citizen + health worker) and a modular design system adopted by 2 Ministry departments.</li>
-            <li>Designed Mobile ID (e-Houwiya) — Tunisia's foundational digital identity platform with service blueprint, CJMs, and inclusive elderly use case design.</li>
-            <li>Led product design for BICICI Bank's AI-powered product recommendation platform — 3 databases merged to 1 unified view in a 1-month sprint.</li>
-          </ul>
-          <div style="display:flex;gap:8px;flex-wrap:wrap;">
-            <a href="evax.html" class="exp-cs-link"><i class="ph ph-arrow-up-right"></i> Evax</a>
-            <a href="mobile-id.html" class="exp-cs-link"><i class="ph ph-arrow-up-right"></i> Mobile ID</a>
-            <a href="bicici.html" class="exp-cs-link"><i class="ph ph-arrow-up-right"></i> BICICI</a>
-          </div>
-        </div>
+      <div class="chapter"><div class="ch-aside"><div class="ch-num">03</div><div class="ch-label">Approach</div>
+          <figure class="shot"><img src="assets/lmis-dashboard.png" alt="The LMIS intelligence dashboard" loading="lazy"><figcaption>The LMIS dashboard — the central intelligence layer structuring all collected labour-market data.</figcaption></figure></div>
+        <div class="ch-body"><h3>Prove before you build: an ecosystem of POCs</h3>
+          <p>Instead of jumping to a production dashboard, I designed <b>7+ proof-of-concept platforms</b>, each testing a specific data source before anyone committed to full development. Three layers: the core <b>LMIS dashboard</b>, the <b>360 data platform</b>, and an <b>AI forecasting module</b> on top.</p>
+          <p>I worked directly in workshops with UN ESCWA, shaping how the AI modules would integrate with the data architecture.</p></div>
       </div>
-
+      <div class="chapter rev"><div class="ch-aside"><div class="ch-num">04</div><div class="ch-label">The decision</div></div>
+        <div class="ch-body"><h3>Designing for insight, not for data density</h3>
+          <p>The hardest decisions were about <em>what to surface and what to hold back</em>. Every choice about how data was structured changed how officials would read — and act on — the labour market.</p>
+          <p>The key decision was to design 7+ proof-of-concept platforms to validate each data source before committing to a production system, rather than building the full intelligence layer up front. It was slower to show a finished product, but it meant we never built polished dashboards on data that turned out to be unusable.</p></div>
+      </div>
+      <div class="chapter"><div class="ch-aside"><div class="ch-num">05</div><div class="ch-label">Solution</div>
+          <figure class="shot"><img src="assets/lmis-360.png" alt="The MOL360 reporting platform" loading="lazy"><figcaption>The 360 platform — ministerial reporting and trend analysis, launched with Microsoft.</figcaption></figure></div>
+        <div class="ch-body"><h3>The ecosystem, launched</h3>
+          <p>The 360 platform I designed launched as the <b>MOL360 initiative with Microsoft</b> (Dec 2024), using Azure OpenAI for real-time insight. It was later extended with a multi-agent AI system — eight agents on Microsoft's AutoGen framework — that now <b>processes applications in under two minutes</b>, a task that previously took days or weeks.</p></div>
+      </div>
+    </div>
+    <div class="wrap gallery-wrap">
+      <div class="gallery-head rv">More from the project</div>
+      <div class="gallery">
+        <figure class="rv"><img src="assets/lmis-poc.png" alt="Proof-of-concept platforms for LMIS" loading="lazy"></figure>
+      </div>
+    </div>
+    <div class="wrap ch-plain"><div class="inner"><div class="ch-label">06 — Outcome</div>
+      <h3>From scattered data to a national tool</h3>
+      <ul><li>MOL360 launched with Microsoft; its multi-agent AI cut a multi-day process to under 2 minutes.</li>
+      <li>LMIS presented at the National Workforce Strategy 2024–2030 launch, under the Prime Minister's patronage.</li>
+      <li>Phase 1 launched December 2025; the system now combines labour-market data with a central AI agent that forecasts job demand for ministerial planning.</li></ul></div></div>
+    <div class="wrap ch-plain"><div class="inner"><div class="ch-label">07 — Reflection</div>
+      <p>The most complex thing I've designed — not because of the UI, but the stakes. The POC-first approach taught me that government design is about validating before committing.</p></div></div>
+    <div class="wrap case-nav">
+      <a href="#dga" data-link data-cursor><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>Prev — DGA</a>
+      <a href="#design-system" data-link data-cursor>Next — Design System <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></a>
     </div>
   </section>
 
-  <!-- PROCESS -->
-  <section class="process" id="process">
-    <div class="reveal">
-      <p class="section-label">How I Work</p>
-      <h2 class="section-title">How I turn<br><em>complexity into structure</em></h2>
-    </div>
-    <div class="process-grid">
-      <div class="process-step reveal reveal-delay-1">
-        <div class="process-step-num">01</div>
-        <div class="process-step-icon"><i class="ph ph-binoculars"></i></div>
-        <h3 class="process-step-title">Discover</h3>
-        <p class="process-step-desc">Understanding the real problem — business goals, user needs, stakeholder expectations, and system constraints through audits, workshops, and research.</p>
-      </div>
-      <div class="process-step reveal reveal-delay-2">
-        <div class="process-step-num">02</div>
-        <div class="process-step-icon"><i class="ph ph-target"></i></div>
-        <h3 class="process-step-title">Define</h3>
-        <p class="process-step-desc">Synthesizing insights into clear problem statements with personas, CJMs, service flows, and design principles to guide every decision.</p>
-      </div>
-      <div class="process-step reveal reveal-delay-3">
-        <div class="process-step-num">03</div>
-        <div class="process-step-icon"><i class="ph ph-figma-logo"></i></div>
-        <h3 class="process-step-title">Design</h3>
-        <p class="process-step-desc">Translating strategy into scalable solutions — flows, interfaces, and reusable systems focused on consistency, usability, accessibility, and scalability.</p>
-      </div>
-      <div class="process-step reveal reveal-delay-4">
-        <div class="process-step-num">04</div>
-        <div class="process-step-icon"><i class="ph ph-briefcase"></i></div>
-        <h3 class="process-step-title">Deliver</h3>
-        <p class="process-step-desc">Developer-ready assets with clear documentation and structured rollout. Close collaboration with engineering to ensure design integrity.</p>
+  <!-- ===== DESIGN SYSTEM ===== -->
+  <section id="view-design-system" class="view" aria-labelledby="ds-h1" hidden>
+    <div class="wrap case-hero">
+      <a class="back" href="#home" data-link data-cursor><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>All work</a>
+      <span class="eyebrow">Design System · Bilingual AR/EN · Ministry of Labour</span>
+      <h1 id="ds-h1" tabindex="-1">Design System</h1>
+      <p class="summary">One system to make nine national platforms feel like one government — in two languages, two reading directions, across three teams.</p>
+      <div class="meta">
+        <div><div class="k">Role</div><div class="v">Senior Product Designer</div></div>
+        <div><div class="k">Client</div><div class="v">Ministry of Labour</div></div>
+        <div><div class="k">Year</div><div class="v">2024 — 2026</div></div>
+        <div><div class="k">Scale</div><div class="v">50+ components · 9+ platforms</div></div>
       </div>
     </div>
-  </section>
-
-  <!-- SERVICES -->
-  <section class="services">
-    <div class="reveal">
-      <p class="section-label">What I Bring to Complex Products</p>
-      <h2 class="section-title">Services &amp; <em>Expertise</em></h2>
+    <div class="wrap">
+      <div class="chapter"><div class="ch-aside"><div class="ch-num">01</div><div class="ch-label">The problem</div></div>
+        <div class="ch-body"><h3>Nine platforms, nine different governments</h3>
+          <p>The Ministry was shipping platform after platform — each built by different people, each looking different. For citizens, the same government felt like a dozen unrelated services. For the teams, every screen was rebuilt from scratch, and Arabic RTL was handled ad hoc.</p>
+          <p>There was no shared foundation. I was the first and only designer positioned to build one.</p></div>
+      </div>
+      <div class="chapter rev"><div class="ch-aside"><div class="ch-num">02</div><div class="ch-label">Constraints</div></div>
+        <div class="ch-body"><h3>What made this harder than a typical system</h3>
+          <ul><li><b>True bilingual RTL.</b> Every component had to mirror cleanly between Arabic and English.</li>
+          <li><b>Mixed adopters.</b> 2 Ministry departments (7–8 developers) plus an outsourced team.</li>
+          <li><b>Handoff without full automation.</b> Figma-to-code wasn't fully automated, so the system — variables, states, documentation — had to be unambiguous enough for developers to build from directly.</li></ul></div>
+      </div>
+      <div class="chapter"><div class="ch-aside"><div class="ch-num">03</div><div class="ch-label">Approach</div>
+          <figure class="shot"><img src="assets/ds-1.png" alt="Design system foundations and tokens" loading="lazy"><figcaption>Foundations — colour, bilingual typography (Arabic + Latin) and spacing tokens.</figcaption></figure></div>
+        <div class="ch-body"><h3>Audit first, then foundations, then components</h3>
+          <p>I started with a <b>UX audit</b> across the platforms to find what was already being rebuilt repeatedly — the real components. From there I set the foundations (spacing, colour, typography for Arabic + Latin, iconography, variables), then built components as bilingual pairs so RTL was native, not retrofitted.</p></div>
+      </div>
+      <div class="chapter rev"><div class="ch-aside"><div class="ch-num">04</div><div class="ch-label">The decision</div>
+          <figure class="shot"><img src="assets/ds-2.png" alt="Bilingual components in LTR and RTL" loading="lazy"><figcaption>Components built as AR/EN pairs — correct RTL behaviour by default.</figcaption></figure></div>
+        <div class="ch-body"><h3>Building RTL in, not bolting it on</h3>
+          <p>The core decision was to treat Arabic as a first-class citizen from the component level up, rather than designing in English and mirroring later. Every component was an AR/EN pair with logical properties, so developers got correct RTL by default.</p>
+          <p>I standardised on a dual-font system — Manrope for English (LTR) and Noto Sans Arabic for Arabic (RTL) — on a shared type scale, and built every value as a two-tier variable (primitive → semantic). That meant a single primitive change propagates across the whole system, and teams couldn't drift into per-platform fonts and one-off colours.</p></div>
+      </div>
+      <div class="chapter"><div class="ch-aside"><div class="ch-num">05</div><div class="ch-label">Solution</div>
+          <figure class="shot"><img src="assets/ds-4.png" alt="The Ministry of Labour component library" loading="lazy"><figcaption>The component library — 50+ components with variants and full interaction states.</figcaption></figure></div>
+        <div class="ch-body"><h3>A 50+ component system, adopted at scale</h3>
+          <p>A scalable design system of <b>50+ reusable components</b> with foundations, variables and full interaction states, adopted by 2 Ministry departments and 1 outsourced team, across <b>9+ national platforms</b>.</p></div>
+      </div>
     </div>
-    <div class="services-list">
-      <div class="service-item reveal reveal-delay-1">
-        <span class="service-num">01</span>
-        <span class="service-name">UX Strategy &amp; Research<span class="service-desc">Defining UX direction for complex platforms through research, audits, and structured problem framing.</span></span>
-      </div>
-      <div class="service-item reveal reveal-delay-2">
-        <span class="service-num">02</span>
-        <span class="service-name">End-to-End Product Design<span class="service-desc">Complete product experiences from user flows to high-fidelity interfaces focused on clarity and usability.</span></span>
-      </div>
-      <div class="service-item reveal reveal-delay-3">
-        <span class="service-num">03</span>
-        <span class="service-name">Design Systems &amp; Scalability<span class="service-desc">Scalable systems with tokens, components, and patterns to ensure consistency across products.</span></span>
-      </div>
-      <div class="service-item reveal reveal-delay-4">
-        <span class="service-num">04</span>
-        <span class="service-name">Accessibility &amp; Inclusive Design<span class="service-desc">WCAG-compliant products through accessibility audits, PoD research, and inclusive design practices.</span></span>
-      </div>
-      <div class="service-item reveal reveal-delay-4">
-        <span class="service-num">05</span>
-        <span class="service-name">UX Audit &amp; Consulting<span class="service-desc">Evaluating existing products, identifying issues, and delivering actionable recommendations for improvement.</span></span>
+    <div class="wrap gallery-wrap">
+      <div class="gallery-head rv">More from the project</div>
+      <div class="gallery">
+        <figure class="rv"><img src="assets/ds-3.png" alt="Design system component detail" loading="lazy"></figure>
+        <figure class="rv"><img src="assets/ds-5.png" alt="Design system in use across platforms" loading="lazy"></figure>
       </div>
     </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section class="contact" id="contact">
-    <div class="contact-inner">
-      <div class="contact-left reveal">
-        <p class="section-label">Get In Touch</p>
-        <h2 class="section-title">Let's create<br><em>something great</em></h2>
-        <p class="contact-text">Open to freelance projects, senior roles, and government digital transformation collaborations across the MENA region. Based in Doha, Qatar.</p>
-        <div class="contact-links">
-          <a href="mailto:idrishedhibi.ux@gmail.com" class="contact-link">
-            <span class="contact-link-icon"><i class="ph-fill ph-at"></i></span>
-            idrishedhibi.ux@gmail.com
-          </a>
-          <a href="https://linkedin.com/in/idris-hedhibi" target="_blank" rel="noopener noreferrer" class="contact-link">
-            <span class="contact-link-icon"><i class="ph-fill ph-linkedin-logo"></i></span>
-            linkedin.com/in/idris-hedhibi
-          </a>
-          <a href="https://www.behance.net/IDRISHEDHIBIUX" target="_blank" rel="noopener noreferrer" class="contact-link">
-            <span class="contact-link-icon"><i class="ph-fill ph-behance-logo"></i></span>
-            behance.net/IDRISHEDHIBIUX
-          </a>
-          <a href="https://github.com/idrishedhibiux-eng" target="_blank" rel="noopener noreferrer" class="contact-link">
-            <span class="contact-link-icon"><i class="ph-fill ph-github-logo"></i></span>
-            github.com/idrishedhibiux-eng
-          </a>
-        </div>
-      </div>
-      <div class="contact-right reveal reveal-delay-2">
-        <div class="form-status" id="formStatus" role="alert" aria-live="polite"></div>
-        <form class="contact-form" id="contactForm" action="https://formspree.io/f/xvzlovzb" method="POST">
-          <div class="form-row">
-            <div class="form-group">
-              <label class="form-label" for="firstName">First Name <span class="form-required">*</span></label>
-              <input type="text" id="firstName" name="firstName" class="form-input" placeholder="Jane" required autocomplete="given-name">
-              <span class="form-error" id="firstNameError" role="alert"></span>
-            </div>
-            <div class="form-group">
-              <label class="form-label" for="lastName">Last Name <span class="form-required">*</span></label>
-              <input type="text" id="lastName" name="lastName" class="form-input" placeholder="Smith" required autocomplete="family-name">
-              <span class="form-error" id="lastNameError" role="alert"></span>
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="form-label" for="email">Email <span class="form-required">*</span></label>
-            <input type="email" id="email" name="email" class="form-input" placeholder="jane@company.com" required autocomplete="email">
-            <span class="form-error" id="emailError" role="alert"></span>
-          </div>
-          <div class="form-group">
-            <label class="form-label" for="subject">Subject</label>
-            <input type="text" id="subject" name="subject" class="form-input" placeholder="Project brief, collaboration, opportunity…" autocomplete="off">
-          </div>
-          <div class="form-group">
-            <label class="form-label" for="message">Message <span class="form-required">*</span></label>
-            <textarea id="message" name="message" class="form-textarea" rows="5" placeholder="Tell me about your project, timeline, and what kind of collaboration you're looking for…" required></textarea>
-            <div class="form-meta-row">
-              <span class="form-error" id="messageError" role="alert"></span>
-              <span class="form-char-count" id="charCount" aria-live="polite">0 / 1000</span>
-            </div>
-          </div>
-          <button type="submit" class="form-submit" id="formSubmit">
-            <span class="btn-text"><i class="ph ph-paper-plane-tilt" aria-hidden="true"></i> Send Message</span>
-            <span class="btn-spinner" aria-hidden="true"></span>
-          </button>
-        </form>
-      </div>
+    <div class="wrap ch-plain"><div class="inner"><div class="ch-label">06 — Outcome</div>
+      <h3>Consistency as infrastructure</h3>
+      <ul><li>50+ components across 9+ platforms and 3 teams — one coherent government experience.</li>
+      <li>Native bilingual RTL support, removing per-project rework.</li>
+      <li>Benchmarked against the UAE, Singapore and GOV.UK design systems, and built to WCAG 2.1 AA — so teams stopped rebuilding buttons, inputs and cards from scratch on every project.</li></ul></div></div>
+    <div class="wrap ch-plain"><div class="inner"><div class="ch-label">07 — Reflection</div>
+      <p>A design system is only real when other people build with it without asking you. What mattered most wasn't the components — it was making them clear and bilingual enough that three teams could ship consistent, accessible Arabic/English services on their own.</p></div></div>
+    <div class="wrap case-nav">
+      <a href="#lmis" data-link data-cursor><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>Prev — LMIS</a>
+      <a href="#evax" data-link data-cursor>Next — Evax <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></a>
     </div>
   </section>
 
-  </main>
-
-  <!-- FOOTER -->
-  <footer>
-    <div class="footer-logo"><img src="footer logopng.png" alt="Logo" aria-hidden="true"></div>
-    <p class="footer-copy">© 2026 — Idris Hedhibi · Senior Product Designer · Doha, Qatar</p>
-    <div class="footer-socials">
-      <a href="https://linkedin.com/in/idris-hedhibi" target="_blank" rel="noopener noreferrer" class="footer-social" aria-label="LinkedIn"><i class="ph-fill ph-linkedin-logo"></i></a>
-      <a href="https://www.behance.net/IDRISHEDHIBIUX" target="_blank" rel="noopener noreferrer" class="footer-social" aria-label="Behance"><i class="ph-fill ph-behance-logo"></i></a>
-      <a href="https://github.com/idrishedhibiux-eng" target="_blank" rel="noopener noreferrer" class="footer-social" aria-label="GitHub"><i class="ph-fill ph-github-logo"></i></a>
+  <!-- ===== EVAX ===== -->
+  <section id="view-evax" class="view" aria-labelledby="evax-h1" hidden>
+    <div class="wrap case-hero">
+      <a class="back" href="#home" data-link data-cursor><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>All work</a>
+      <span class="eyebrow">Product Design · E-Health · EY Tunisia</span>
+      <h1 id="evax-h1" tabindex="-1">Evax</h1>
+      <p class="summary">A country's vaccine rollout, designed for two very different users at once — millions of citizens and the health workers serving them — under real national pressure.</p>
+      <div class="meta">
+        <div><div class="k">Role</div><div class="v">Product Designer</div></div>
+        <div><div class="k">Client</div><div class="v">Ministry of Health · EY · GIZ</div></div>
+        <div><div class="k">Year</div><div class="v">2022</div></div>
+        <div><div class="k">Scale</div><div class="v">8M+ citizens · 13M+ doses</div></div>
+      </div>
     </div>
-  </footer>
+    <div class="wrap">
+      <div class="chapter"><div class="ch-aside"><div class="ch-num">01</div><div class="ch-label">The problem</div></div>
+        <div class="ch-body"><h3>One platform, two users who couldn't be more different</h3>
+          <p>Tunisia needed to vaccinate a nation, fast. One system serving two populations with opposite needs: ordinary citizens — of every age and digital comfort level — booking and tracking doses, and health workers managing throughput at speed in clinics.</p>
+          <p>Get the citizen side wrong and people can't get vaccinated. Get the worker side wrong and the queues stop moving. Both had to work from day one, at national scale.</p></div>
+      </div>
+      <div class="chapter rev"><div class="ch-aside"><div class="ch-num">02</div><div class="ch-label">Constraints</div></div>
+        <div class="ch-body"><h3>National scale, national urgency</h3>
+          <ul><li><b>8M+ citizens, every ability level.</b> Including elderly and low-digital-literacy users.</li>
+          <li><b>Two portals, one system.</b> Citizen and health-worker experiences had to stay coherent.</li>
+          <li><b>Speed.</b> A live national rollout left no room for slow iteration.</li></ul></div>
+      </div>
+      <div class="chapter"><div class="ch-aside"><div class="ch-num">03</div><div class="ch-label">Approach</div>
+          <figure class="shot"><img src="assets/evax-1.png" alt="Evax two-portal architecture" loading="lazy"><figcaption>The two-portal architecture — citizen and health-worker experiences on one modular system.</figcaption></figure></div>
+        <div class="ch-body"><h3>A two-portal architecture on a shared system</h3>
+          <p>I architected a two-portal system — citizen and health worker — and designed the full UI for both on a <b>modular design system</b> so the two experiences stayed consistent while serving different jobs. Adopted by 2 Ministry of Health departments.</p>
+          <p>Research ran alongside, across 30+ hours of workshops and usability testing. I mapped 4 persona types — Tunisian citizens (with and without a national ID), foreign citizens, children, and vaccination agents — and validated comprehension across very different literacy levels, which is what kept the citizen flow simple.</p></div>
+      </div>
+      <div class="chapter rev"><div class="ch-aside"><div class="ch-num">04</div><div class="ch-label">Solution</div>
+          <figure class="shot"><img src="assets/evax-2.png" alt="Evax citizen and health-worker screens" loading="lazy"><figcaption>Citizen booking and tracking, kept simple enough for any age.</figcaption></figure></div>
+        <div class="ch-body"><h3>Two portals, built to move millions</h3>
+          <p>The citizen portal made booking and tracking simple enough for any age; the health-worker portal kept clinics moving. Together they served <b>8M+ registered users and 13M+ doses</b>, delivered with Tunisia's Ministry of Health and funded through German development cooperation (GIZ / BMZ).</p></div>
+      </div>
+    </div>
+    <div class="wrap gallery-wrap">
+      <div class="gallery-head rv">More from the project</div>
+      <div class="gallery">
+        <figure class="rv"><img src="assets/evax-3.png" alt="Evax screen" loading="lazy"></figure>
+        <figure class="rv"><img src="assets/evax-4.png" alt="Evax screen" loading="lazy"></figure>
+        <figure class="rv"><img src="assets/evax-5.png" alt="Evax screen" loading="lazy"></figure>
+        <figure class="rv"><img src="assets/evax-6.png" alt="Evax screen" loading="lazy"></figure>
+        <figure class="rv"><img src="assets/evax-7.png" alt="Evax screen" loading="lazy"></figure>
+        <figure class="rv"><img src="assets/evax-8.png" alt="Evax screen" loading="lazy"></figure>
+        <figure class="rv"><img src="assets/evax-9.png" alt="Evax screen" loading="lazy"></figure>
+      </div>
+    </div>
+    <div class="wrap ch-plain"><div class="inner"><div class="ch-label">05 — Outcome</div>
+      <h3>National impact, at speed</h3>
+      <ul><li>8M+ citizens served, 13M+ doses administered through the platform.</li>
+      <li>A modular design system adopted across 2 Ministry of Health departments.</li>
+      <li>1,240 vaccination centres connected and 6,190+ health professionals onboarded; expanded in 2024 from COVID to all routine national immunisations, and presented at the Council of Arab Ministers of Health.</li></ul></div></div>
+    <div class="wrap ch-plain"><div class="inner"><div class="ch-label">06 — Reflection</div>
+      <p>Evax was my first lesson in designing for an entire population at once — where "edge cases" are millions of real people. Two portals on one system taught me to hold very different users in mind without letting the product fracture.</p></div></div>
+    <div class="wrap case-nav">
+      <a href="#design-system" data-link data-cursor><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>Prev — Design System</a>
+      <a href="#home" data-link data-cursor>All work <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></a>
+    </div>
+  </section>
 
-  <script src="js/main.js" defer></script>
+</main>
+
+<footer><div class="wrap"><span>© 2026 Idris Hedhibi</span><span>Senior Product Designer · Doha, QA</span></div></footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
+<script>
+(function(){
+  "use strict";
+  var D=document, root=D.documentElement;
+  root.classList.add('js');
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+  var touch = window.matchMedia && window.matchMedia('(hover:none),(pointer:coarse)').matches;
+  var G = window.gsap;
+
+  var views={home:"view-home",dga:"view-dga",lmis:"view-lmis","design-system":"view-design-system",evax:"view-evax"};
+  var anchors={about:"about-anchor",experience:"experience-anchor",contact:"contact-anchor"};
+  var titles={home:"Idris Hedhibi — Senior Product Designer",dga:"DGA Accessibility — Idris Hedhibi",lmis:"LMIS & MOL360 — Idris Hedhibi","design-system":"Design System — Idris Hedhibi",evax:"Evax — Idris Hedhibi"};
+
+  /* ---- Lenis smooth scroll ---- */
+  var lenis=null;
+  if(window.Lenis && !reduce){
+    try{
+      lenis=new Lenis({lerp:0.09,wheelMultiplier:1,smoothWheel:true});
+      if(G && G.ticker){ G.ticker.add(function(t){ lenis.raf(t*1000); }); G.ticker.lagSmoothing(0); }
+      else { (function raf(t){ lenis.raf(t); requestAnimationFrame(raf); })(); }
+    }catch(e){ lenis=null; }
+  }
+  function toTop(){ if(lenis){ lenis.scrollTo(0,{immediate:true}); } window.scrollTo(0,0); }
+
+  /* ---- reveal observer ---- */
+  var io=('IntersectionObserver' in window)?new IntersectionObserver(function(es){
+    es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+  },{rootMargin:"0px 0px -10% 0px"}):null;
+  var chapIo=('IntersectionObserver' in window)?new IntersectionObserver(function(es){
+    es.forEach(function(e){ e.target.classList.toggle('active',e.isIntersecting); });
+  },{rootMargin:"-42% 0px -42% 0px"}):null;
+  function revealPass(view){
+    view.querySelectorAll('.rv').forEach(function(el){
+      var r=el.getBoundingClientRect();
+      if(r.top<window.innerHeight*0.94){ el.classList.add('in'); }
+      else if(io){ io.observe(el); } else { el.classList.add('in'); }
+    });
+  }
+
+  function activate(key){
+    var view=D.getElementById(views[key]); if(!view) return;
+    revealPass(view);
+    if(chapIo) view.querySelectorAll('.chapter').forEach(function(c){ chapIo.observe(c); });
+    heroActive=(key==="home");
+  }
+
+  function show(route,sub){
+    var key=views[route]?route:"home";
+    Object.keys(views).forEach(function(k){ var el=D.getElementById(views[k]); if(el) el.hidden=(k!==key); });
+    D.querySelectorAll('nav.main a[data-link]').forEach(function(a){a.removeAttribute('aria-current');});
+    var navKey=(key==="home")?(sub||"home"):key;
+    var map={home:"#home",about:"#about",experience:"#experience",contact:"#contact"};
+    var act=D.querySelector('nav.main a[href="'+(map[navKey]||"#home")+'"]'); if(act) act.setAttribute('aria-current','page');
+    D.title=titles[key]||titles.home;
+    if(key==="home"&&sub&&anchors[sub]){
+      activate(key);
+      var sec=D.getElementById(anchors[sub]);
+      if(sec){ if(lenis){lenis.scrollTo(sec,{offset:-60});} else {sec.scrollIntoView({behavior:reduce?"auto":"smooth"});} return; }
+    }
+    toTop();
+    var h=D.getElementById(views[key]).querySelector('[tabindex="-1"]');
+    if(h){ try{h.focus({preventScroll:true});}catch(e){h.focus();} }
+    activate(key);
+  }
+
+  /* ---- page transition ---- */
+  var pt=D.getElementById('pt'), transitioning=false;
+  function navigate(href){
+    var r=href.replace(/^#/,'');
+    if(location.hash===href){ parse(); return; }
+    if(reduce||!G){ location.hash=href; return; }
+    if(transitioning) return; transitioning=true;
+    var tl=G.timeline({onComplete:function(){transitioning=false;}});
+    tl.set(pt,{transformOrigin:"bottom",scaleY:0})
+      .to(pt,{scaleY:1,duration:0.45,ease:"power3.inOut"})
+      .add(function(){ location.hash=href; })
+      .set(pt,{transformOrigin:"top"})
+      .to(pt,{scaleY:0,duration:0.5,ease:"power3.inOut"},"+=0.05");
+  }
+
+  function parse(){
+    var raw=(location.hash||"#home").replace(/^#/,'');
+    if(views[raw]) return show(raw);
+    if(anchors[raw]) return show("home",raw);
+    return show("home");
+  }
+
+  D.addEventListener('click',function(e){
+    var a=e.target.closest('a[data-link]'); if(!a) return;
+    var href=a.getAttribute('href')||""; if(href.indexOf('#')!==0) return;
+    e.preventDefault(); navigate(href);
+  });
+  window.addEventListener('hashchange',parse);
+
+  /* ---- progress + bar ---- */
+  var progress=D.getElementById('progress'), bar=D.getElementById('bar');
+  function onScroll(){
+    var h=root, max=h.scrollHeight-h.clientHeight, p=max>0?(h.scrollTop/max)*100:0;
+    progress.style.width=p+"%"; bar.classList.toggle('scrolled',h.scrollTop>10);
+    var v=D.querySelector('.view:not([hidden])'); if(v) revealPass(v);
+  }
+  if(lenis){ lenis.on('scroll',onScroll); } else { window.addEventListener('scroll',onScroll,{passive:true}); }
+
+  /* ---- theme ---- */
+  var btn=D.getElementById('themeBtn');
+  function stored(){ try{return localStorage.getItem('ih-theme');}catch(e){return null;} }
+  function apply(t){ if(t==="dark"||t==="light"){root.setAttribute('data-theme',t);} else {root.removeAttribute('data-theme');} }
+  apply(stored());
+  if(btn) btn.addEventListener('click',function(){
+    var cur=root.getAttribute('data-theme');
+    var sysLight=window.matchMedia&&window.matchMedia('(prefers-color-scheme:light)').matches;
+    var now=cur?cur:(sysLight?"light":"dark"); var next=now==="dark"?"light":"dark";
+    apply(next); try{localStorage.setItem('ih-theme',next);}catch(e){}
+  });
+
+  /* ---- copy email ---- */
+  var EMAIL='idrishedhibi.ux@gmail.com', toast=D.getElementById('toast'), toastT=null;
+  function showToast(){ if(!toast) return; toast.classList.add('show'); clearTimeout(toastT);
+    toastT=setTimeout(function(){ toast.classList.remove('show'); },1800); }
+  function copyEmail(){
+    function sel(){ try{ var el=D.getElementById('emailLine'); if(el){ var r=D.createRange(); r.selectNodeContents(el);
+      var s=window.getSelection(); s.removeAllRanges(); s.addRange(r); } }catch(e){} showToast(); }
+    if(navigator.clipboard&&navigator.clipboard.writeText){ navigator.clipboard.writeText(EMAIL).then(showToast).catch(sel); }
+    else sel();
+  }
+  D.querySelectorAll('.js-copy').forEach(function(b){ b.addEventListener('click',function(e){ e.preventDefault(); copyEmail(); }); });
+
+  /* ---- contact form (Formspree; works live on your domain) ---- */
+  var cform=D.getElementById('cform');
+  if(cform){
+    cform.addEventListener('submit',function(e){
+      e.preventDefault();
+      var note=D.getElementById('formNote'), btn=cform.querySelector('.form-submit'), old=btn.innerHTML;
+      note.className='form-note'; note.textContent='';
+      btn.disabled=true; btn.textContent='Sending…';
+      fetch(cform.action,{method:'POST',body:new FormData(cform),headers:{'Accept':'application/json'}})
+        .then(function(r){ if(r.ok){ cform.reset(); note.className='form-note ok';
+            note.textContent='Thanks — your message has been sent. I’ll be in touch soon.'; }
+          else { throw new Error('bad'); } })
+        .catch(function(){ note.className='form-note err';
+          note.textContent='Couldn’t send from here — email me directly at idrishedhibi.ux@gmail.com'; })
+        .then(function(){ btn.disabled=false; btn.innerHTML=old; });
+    });
+  }
+
+  /* ---- custom cursor ---- */
+  if(!touch){
+    D.body.classList.add('hide-native');
+    var dot=D.querySelector('.cursor'), ring=D.querySelector('.cursor-ring');
+    var mx=innerWidth/2,my=innerHeight/2,rx=mx,ry=my;
+    window.addEventListener('pointermove',function(e){ mx=e.clientX;my=e.clientY;
+      dot.style.transform='translate('+(mx-3.5)+'px,'+(my-3.5)+'px)'; },{passive:true});
+    (function ring_loop(){ rx+=(mx-rx)*0.18; ry+=(my-ry)*0.18;
+      ring.style.transform='translate('+(rx-20)+'px,'+(ry-20)+'px)'; requestAnimationFrame(ring_loop); })();
+    D.addEventListener('pointerover',function(e){
+      if(e.target.closest('a,button,[data-cursor]')) ring.classList.add('grow'); });
+    D.addEventListener('pointerout',function(e){
+      if(e.target.closest('a,button,[data-cursor]')) ring.classList.remove('grow'); });
+  }
+
+  /* ---- floating peek on work rows ---- */
+  if(!touch){
+    var peek=D.getElementById('peek'), peekLabel=peek.querySelector('.pk-label');
+    var px=0,py=0,ptx=0,pty=0,peekOn=false;
+    D.querySelectorAll('[data-peek]').forEach(function(row){
+      row.addEventListener('pointerenter',function(){ peekOn=true; peek.classList.add('on');
+        peekLabel.textContent=row.getAttribute('data-peek'); });
+      row.addEventListener('pointerleave',function(){ peekOn=false; peek.classList.remove('on'); });
+    });
+    window.addEventListener('pointermove',function(e){ ptx=e.clientX; pty=e.clientY; },{passive:true});
+    (function peek_loop(){ px+=(ptx-px)*0.12; py+=(pty-py)*0.12;
+      if(peekOn) peek.style.left=px+'px', peek.style.top=py+'px'; requestAnimationFrame(peek_loop); })();
+  }
+
+  /* ---- hero parallax ---- */
+  var heroActive=true;
+  if(!reduce){
+    var h1=D.querySelector('.hero h1');
+    window.addEventListener('pointermove',function(e){
+      if(!heroActive||!h1) return;
+      var dx=(e.clientX/innerWidth-0.5), dy=(e.clientY/innerHeight-0.5);
+      h1.style.transform='translate('+(dx*18)+'px,'+(dy*10)+'px)';
+    },{passive:true});
+  }
+
+  /* ---- loader + hero intro ---- */
+  function heroIn(){
+    if(reduce||!G){ return; }
+    var spans=D.querySelectorAll('.hero h1 .ln > span');
+    G.set(spans,{yPercent:110});
+    G.to(spans,{yPercent:0,duration:1.1,ease:"power4.out",stagger:0.08,delay:0.1});
+    G.from('.hero-top, .hero-lede, .scrollcue, .portrait-wrap',{opacity:0,y:24,duration:0.9,ease:"power3.out",stagger:0.08,delay:0.5});
+  }
+  var loader=D.getElementById('loader'), lbar=D.getElementById('loaderBar'), lpct=D.getElementById('loaderPct');
+  var fill=null;
+  if(lbar){ fill=D.createElement('div'); fill.style.cssText='position:absolute;inset:0;background:var(--accent);transform:translateX(-100%)'; lbar.appendChild(fill); }
+  function runLoader(cb){
+    if(reduce||!G||!loader){ if(loader) loader.style.display='none'; cb(); return; }
+    var lw=loader.querySelector('.loader-word span');
+    var o={v:0};
+    var tl=G.timeline();
+    tl.to(lw,{yPercent:0,duration:0.7,ease:"power3.out"});
+    if(fill) tl.fromTo(fill,{xPercent:-100},{xPercent:0,duration:1.1,ease:"power1.inOut"},"-=0.3");
+    tl.to(o,{v:100,duration:1.1,ease:"power1.inOut",onUpdate:function(){ lpct.textContent=Math.round(o.v)+'%'; }},"<")
+      .add(cb)
+      .to(loader,{yPercent:-100,duration:0.8,ease:"power4.inOut"},"+=0.1")
+      .set(loader,{display:'none'});
+  }
+
+  /* ---- init ---- */
+  parse();
+  if(loader && !reduce && G){ runLoader(function(){ heroIn(); }); }
+  else { if(loader) loader.style.display='none'; heroIn(); }
+  onScroll();
+
+  // failsafe reveal
+  setTimeout(function(){ D.querySelectorAll('.rv:not(.in)').forEach(function(el){
+    var v=el.closest('.view'); if(v&&!v.hidden) el.classList.add('in'); }); },3000);
+})();
+</script>
+
 </body>
+
 </html>
