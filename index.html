@@ -84,9 +84,9 @@
     transition:background .3s}
   header.bar.scrolled{background:color-mix(in srgb,var(--bg) 82%,transparent);backdrop-filter:blur(14px)}
   .bar .wrap{max-width:none;display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:20px}
-  .brand{display:inline-flex;align-items:center;color:var(--fg)}
-  .brand svg.logo{height:20px;width:auto;display:block}
-  .loader-word svg.logo{height:clamp(30px,6vw,56px);width:auto;display:block}
+  .brand{display:inline-flex;align-items:center;color:var(--fg);margin-right:auto}
+  .brand svg.logo{height:20px;width:103px;aspect-ratio:93/18;display:block;flex:none}
+  .loader-word svg.logo{height:clamp(30px,6vw,56px);width:auto;aspect-ratio:93/18;display:block}
   nav.main{display:flex;align-items:center;gap:clamp(16px,2.5vw,32px)}
   nav.main a{font-size:13px;color:var(--muted);position:relative;transition:color .2s;overflow:hidden}
   nav.main a span{display:inline-block;transition:transform .35s cubic-bezier(.6,0,.2,1)}
