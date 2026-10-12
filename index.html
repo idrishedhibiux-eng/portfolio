@@ -367,8 +367,9 @@
   .gallery-wrap{border-top:1px solid var(--line);padding-block:clamp(40px,6vw,72px)}
   .gallery-head{font-family:var(--mono);font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:var(--accent);margin-bottom:24px}
   .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
-  .gallery figure{margin:0;border-radius:14px;overflow:hidden;border:1px solid var(--line);background:var(--surface)}
+  .gallery figure{margin:0;border-radius:14px;overflow:hidden;border:1px solid var(--line);background:var(--surface);display:flex;flex-direction:column}
   .gallery figure img{width:100%;height:auto;display:block}
+  .gallery figcaption{font-size:12.5px;color:var(--muted);padding:12px 14px;line-height:1.45;border-top:1px solid var(--line)}
 
   .ch-plain{border-top:1px solid var(--line);padding-block:clamp(44px,7vw,80px)}
   .ch-plain .inner{max-width:var(--col)}
@@ -639,8 +640,8 @@
     <div class="wrap gallery-wrap">
       <div class="gallery-head rv">More from the project</div>
       <div class="gallery">
-        <figure class="rv"><img src="assets/dga-cover.png" alt="DGA accessibility project overview" loading="lazy"></figure>
-        <figure class="rv"><img src="assets/dga-pdf.png" alt="The national accessibility guidelines document" loading="lazy"></figure>
+        <figure class="rv"><img src="assets/dga-cover.png" alt="Accessibility audit with annotated WCAG findings" loading="lazy"><figcaption>The accessibility audit — annotated findings showing WCAG violations across all three platforms.</figcaption></figure>
+        <figure class="rv"><img src="assets/dga-pdf.png" alt="The national accessibility guidelines document" loading="lazy"><figcaption>The national Accessibility Guidelines — a designer and developer reference aligned with WCAG 2.2.</figcaption></figure>
       </div>
     </div>
     <div class="wrap ch-plain"><div class="inner"><div class="ch-label">07 — Outcome</div>
@@ -746,18 +747,18 @@
           <li><b>Handoff without full automation.</b> Figma-to-code wasn't fully automated, so the system — variables, states, documentation — had to be unambiguous enough for developers to build from directly.</li></ul></div>
       </div>
       <div class="chapter"><div class="ch-aside"><div class="ch-num">03</div><div class="ch-label">Approach</div>
-          <figure class="shot"><img src="assets/ds-1.png" alt="Design system foundations and tokens" loading="lazy"><figcaption>Foundations — colour, bilingual typography (Arabic + Latin) and spacing tokens.</figcaption></figure></div>
+          <figure class="shot"><img src="assets/ds-1.png" alt="The colour system — primary palettes, semantic states and the Qatar gradient set" loading="lazy"><figcaption>Foundations — the colour system: primary palettes, semantic success/error/warning states, and the Qatar gradient set.</figcaption></figure></div>
         <div class="ch-body"><h3>Audit first, then foundations, then components</h3>
           <p>I started with a <b>UX audit</b> across the platforms to find what was already being rebuilt repeatedly — the real components. From there I set the foundations (spacing, colour, typography for Arabic + Latin, iconography, variables), then built components as bilingual pairs so RTL was native, not retrofitted.</p></div>
       </div>
       <div class="chapter rev"><div class="ch-aside"><div class="ch-num">04</div><div class="ch-label">The decision</div>
-          <figure class="shot"><img src="assets/ds-2.png" alt="Bilingual components in LTR and RTL" loading="lazy"><figcaption>Components built as AR/EN pairs — correct RTL behaviour by default.</figcaption></figure></div>
+          <figure class="shot"><img src="assets/ds-2.png" alt="Typography — Manrope for English and Noto Sans Arabic for Arabic" loading="lazy"><figcaption>The dual-font system — Manrope (LTR) and Noto Sans Arabic (RTL) on one shared type scale.</figcaption></figure></div>
         <div class="ch-body"><h3>Building RTL in, not bolting it on</h3>
           <p>The core decision was to treat Arabic as a first-class citizen from the component level up, rather than designing in English and mirroring later. Every component was an AR/EN pair with logical properties, so developers got correct RTL by default.</p>
           <p>I standardised on a dual-font system — Manrope for English (LTR) and Noto Sans Arabic for Arabic (RTL) — on a shared type scale, and built every value as a two-tier variable (primitive → semantic). That meant a single primitive change propagates across the whole system, and teams couldn't drift into per-platform fonts and one-off colours.</p></div>
       </div>
       <div class="chapter"><div class="ch-aside"><div class="ch-num">05</div><div class="ch-label">Solution</div>
-          <figure class="shot"><img src="assets/ds-4.png" alt="The Ministry of Labour component library" loading="lazy"><figcaption>The component library — 50+ components with variants and full interaction states.</figcaption></figure></div>
+          <figure class="shot"><img src="assets/ds-5.png" alt="The Ministry of Labour component library" loading="lazy"><figcaption>The component library — 50+ components with variants, RTL support and full interaction states.</figcaption></figure></div>
         <div class="ch-body"><h3>A 50+ component system, adopted at scale</h3>
           <p>A scalable design system of <b>50+ reusable components</b> with foundations, variables and full interaction states, adopted by 2 Ministry departments and 1 outsourced team, across <b>9+ national platforms</b>.</p></div>
       </div>
@@ -765,8 +766,8 @@
     <div class="wrap gallery-wrap">
       <div class="gallery-head rv">More from the project</div>
       <div class="gallery">
-        <figure class="rv"><img src="assets/ds-3.png" alt="Design system component detail" loading="lazy"></figure>
-        <figure class="rv"><img src="assets/ds-5.png" alt="Design system in use across platforms" loading="lazy"></figure>
+        <figure class="rv"><img src="assets/ds-3.png" alt="Spacing and responsive grid system, 12-column desktop to 2-column mobile" loading="lazy"></figure>
+        <figure class="rv"><img src="assets/ds-4.png" alt="Figma variables — primitive tokens mapped to semantic roles" loading="lazy"></figure>
       </div>
     </div>
     <div class="wrap ch-plain"><div class="inner"><div class="ch-label">06 — Outcome</div>
@@ -809,13 +810,13 @@
           <li><b>Speed.</b> A live national rollout left no room for slow iteration.</li></ul></div>
       </div>
       <div class="chapter"><div class="ch-aside"><div class="ch-num">03</div><div class="ch-label">Approach</div>
-          <figure class="shot"><img src="assets/evax-1.png" alt="Evax two-portal architecture" loading="lazy"><figcaption>The two-portal architecture — citizen and health-worker experiences on one modular system.</figcaption></figure></div>
+          <figure class="shot"><img src="assets/evax-4.png" alt="Customer journey maps for citizens and health workers" loading="lazy"><figcaption>Customer journey maps — the end-to-end vaccination journey for citizens and health workers.</figcaption></figure></div>
         <div class="ch-body"><h3>A two-portal architecture on a shared system</h3>
           <p>I architected a two-portal system — citizen and health worker — and designed the full UI for both on a <b>modular design system</b> so the two experiences stayed consistent while serving different jobs. Adopted by 2 Ministry of Health departments.</p>
           <p>Research ran alongside, across 30+ hours of workshops and usability testing. I mapped 4 persona types — Tunisian citizens (with and without a national ID), foreign citizens, children, and vaccination agents — and validated comprehension across very different literacy levels, which is what kept the citizen flow simple.</p></div>
       </div>
       <div class="chapter rev"><div class="ch-aside"><div class="ch-num">04</div><div class="ch-label">Solution</div>
-          <figure class="shot"><img src="assets/evax-2.png" alt="Evax citizen and health-worker screens" loading="lazy"><figcaption>Citizen booking and tracking, kept simple enough for any age.</figcaption></figure></div>
+          <figure class="shot"><img src="assets/evax-7.png" alt="Espace Citoyen — the citizen-facing portal in Arabic" loading="lazy"><figcaption>Espace Citoyen — the citizen portal, with vaccination history and certificate access.</figcaption></figure></div>
         <div class="ch-body"><h3>Two portals, built to move millions</h3>
           <p>The citizen portal made booking and tracking simple enough for any age; the health-worker portal kept clinics moving. Together they served <b>8M+ registered users and 13M+ doses</b>, delivered with Tunisia's Ministry of Health and funded through German development cooperation (GIZ / BMZ).</p></div>
       </div>
@@ -823,13 +824,13 @@
     <div class="wrap gallery-wrap">
       <div class="gallery-head rv">More from the project</div>
       <div class="gallery">
-        <figure class="rv"><img src="assets/evax-3.png" alt="Evax screen" loading="lazy"></figure>
-        <figure class="rv"><img src="assets/evax-4.png" alt="Evax screen" loading="lazy"></figure>
-        <figure class="rv"><img src="assets/evax-5.png" alt="Evax screen" loading="lazy"></figure>
-        <figure class="rv"><img src="assets/evax-6.png" alt="Evax screen" loading="lazy"></figure>
-        <figure class="rv"><img src="assets/evax-7.png" alt="Evax screen" loading="lazy"></figure>
-        <figure class="rv"><img src="assets/evax-8.png" alt="Evax screen" loading="lazy"></figure>
-        <figure class="rv"><img src="assets/evax-9.png" alt="Evax screen" loading="lazy"></figure>
+        <figure class="rv"><img src="assets/evax-8.png" alt="Health-worker backoffice portal" loading="lazy"><figcaption>Backoffice — the health-worker portal: campaign management, stock tracking and MAPI reporting.</figcaption></figure>
+        <figure class="rv"><img src="assets/evax-9.png" alt="Evax modular design system" loading="lazy"><figcaption>The modular design system built for Evax, adopted across 2 Ministry of Health departments.</figcaption></figure>
+        <figure class="rv"><img src="assets/evax-2.png" alt="Citizen and health-worker personas" loading="lazy"><figcaption>User personas — citizen and health-worker, with goals, frustrations and tech behaviours.</figcaption></figure>
+        <figure class="rv"><img src="assets/evax-3.png" alt="Stakeholder and actor map" loading="lazy"><figcaption>Stakeholder &amp; actor map — project stakeholders and the four end-user categories.</figcaption></figure>
+        <figure class="rv"><img src="assets/evax-5.png" alt="The Evax ecosystem diagram" loading="lazy"><figcaption>The Evax ecosystem — planning, registration, vaccination, complaints, stock and 1,240 centres.</figcaption></figure>
+        <figure class="rv"><img src="assets/evax-1.png" alt="Competitor analysis of e-health platforms" loading="lazy"><figcaption>Competitor analysis — benchmarking French, European and regional e-health platforms.</figcaption></figure>
+        <figure class="rv"><img src="assets/evax-6.png" alt="17-sprint delivery cycle" loading="lazy"><figcaption>Delivery — 17 sprints from backlog to launch, with stakeholder review at each boundary.</figcaption></figure>
       </div>
     </div>
     <div class="wrap ch-plain"><div class="inner"><div class="ch-label">05 — Outcome</div>
